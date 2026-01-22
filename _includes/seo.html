@@ -40,8 +40,6 @@
 
 {% if page.image %}
   <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}{{ page.image }}">
-{% else %}
-  <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/assets/images/default-og.png">
 {% endif %}
 
 <!-- Twitter Card -->
@@ -51,8 +49,6 @@
 <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
 {% if page.image %}
   <meta name="twitter:image" content="{{ site.url }}{{ site.baseurl }}{{ page.image }}">
-{% else %}
-  <meta name="twitter:image" content="{{ site.url }}{{ site.baseurl }}/assets/images/default-og.png">
 {% endif %}
 {% if site.twitter.username %}
   <meta name="twitter:creator" content="@{{ site.twitter.username }}">
@@ -84,14 +80,10 @@
   },
   "publisher": {
     "@type": "Organization",
-    "name": "{{ site.title }}",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "{{ site.url }}{{ site.baseurl }}/assets/images/logo.png"
-    }
+    "name": "{{ site.title }}"
   },
   {% endif %}
-  "image": "{% if page.image %}{{ site.url }}{{ site.baseurl }}{{ page.image }}{% else %}{{ site.url }}{{ site.baseurl }}/assets/images/default-og.png{% endif %}",
+  {% if page.image %}"image": "{{ site.url }}{{ site.baseurl }}{{ page.image }}",{% endif %}
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "{{ site.url }}{{ site.baseurl }}{{ page.url }}"

@@ -42,7 +42,6 @@ defaults:
     values:
       layout: "magazine"
       author: "Jazzy Lazy AI"
-      image: /ai-magazine/assets/images/default-og.png
 
 # Exclude files
 exclude:
