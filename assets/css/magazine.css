@@ -6,6 +6,7 @@
     --color-text: #f5f1e8;
     --color-text-secondary: #a89f8d;
     --color-accent: #d4a574;
+    --color-accent-rgb: 212, 165, 116;
     --color-accent-dim: rgba(212, 165, 116, 0.15);
     --color-accent-glow: rgba(212, 165, 116, 0.4);
     --color-accent-secondary: #8b4a4a;
@@ -24,6 +25,19 @@
 html {
     font-size: 16px;
     scroll-behavior: smooth;
+}
+
+/* Typography scaling for larger screens */
+@media (min-width: 768px) {
+    html {
+        font-size: 17px;
+    }
+}
+
+@media (min-width: 1024px) {
+    html {
+        font-size: 18px;
+    }
 }
 
 body {
@@ -414,7 +428,7 @@ body::before {
     grid-template-columns: repeat(12, 1fr);
     gap: 2rem;
     padding: 4rem;
-    max-width: 1600px;
+    max-width: 1320px;
     margin: 0 auto;
 }
 
@@ -425,6 +439,7 @@ body::before {
     grid-template-columns: 2fr 1fr;
     gap: 4rem;
     padding: 4rem 0;
+    margin-bottom: 4rem;
     border-top: 1px solid var(--color-border);
 }
 
@@ -446,6 +461,7 @@ body::before {
 
 .main-article {
     position: relative;
+    max-width: 720px;
 }
 
 .section-number {
@@ -474,7 +490,7 @@ body::before {
     font-size: 1.15rem;
     font-weight: 500;
     color: var(--color-accent);
-    margin-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
     position: relative;
     z-index: 1;
     line-height: 1.6;
@@ -528,11 +544,10 @@ body::before {
 }
 
 .answer {
-    columns: 2;
-    column-gap: 2.5rem;
-    column-rule: 1px solid var(--color-border);
+    column-count: 1;
     font-size: 0.95rem;
     line-height: 1.85;
+    letter-spacing: 0.01em;
     color: var(--color-text);
 }
 
@@ -548,8 +563,9 @@ body::before {
 
 /* Sidebar Knowledge */
 .sidebar-knowledge {
-    background: var(--color-surface);
-    padding: 2rem;
+    background: rgba(var(--color-accent-rgb), 0.03);
+    padding: 1.5rem;
+    border-radius: 8px;
     border-left: 3px solid var(--color-accent);
     align-self: start;
     position: sticky;
@@ -814,9 +830,15 @@ body::before {
     }
 
     .section-number {
-        font-size: 4rem;
+        font-size: 2.5rem;
         top: -1.5rem;
         left: -0.5rem;
+    }
+
+    /* Minimum font size guarantees */
+    .knowledge-desc,
+    .context-content {
+        font-size: max(0.875rem, 14px);
     }
 
     .section-title {
