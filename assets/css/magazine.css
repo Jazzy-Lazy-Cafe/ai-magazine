@@ -659,6 +659,164 @@ body::before {
     }
 }
 
+/* Galaxy Fold 4 and very narrow screens */
+@media (max-width: 480px) {
+    .magazine-header {
+        padding: 0.75rem 1rem;
+    }
+
+    .logo {
+        font-size: 1.25rem;
+    }
+
+    .episode-info {
+        font-size: 0.65rem;
+    }
+
+    .hero-content {
+        padding: 3rem 1rem;
+    }
+
+    .hero-title {
+        font-size: clamp(2rem, 5vw, 4.5rem);
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .hero-label::before {
+        width: 20px;
+    }
+
+    .guest-avatar {
+        width: 48px;
+        height: 48px;
+        font-size: 1rem;
+    }
+
+    .guest-info h4 {
+        font-size: 0.85rem;
+    }
+
+    .guest-info p {
+        font-size: 0.7rem;
+    }
+
+    .magazine-grid {
+        padding: 1rem;
+        gap: 1.5rem;
+    }
+
+    .magazine-grid .key-insight {
+        margin: 1.5rem -1rem;
+        width: calc(100% + 2rem);
+        padding: 3rem 1rem;
+    }
+
+    .key-insight {
+        padding: 3rem 1rem;
+    }
+
+    .key-insight::before {
+        font-size: 20rem;
+        top: -3rem;
+        left: 0;
+    }
+
+    .article-section {
+        padding: 3rem 0;
+        gap: 2rem;
+    }
+
+    .section-number {
+        font-size: 4rem;
+        top: -1.5rem;
+        left: -0.5rem;
+    }
+
+    .section-title {
+        font-size: 1.35rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .question {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .question::before {
+        font-size: 1.1rem;
+        margin-right: 0.5rem;
+    }
+
+    .answer {
+        font-size: 0.9rem;
+        line-height: 1.75;
+    }
+
+    .answer::first-letter {
+        font-size: 3rem;
+        margin-right: 0.35rem;
+    }
+
+    .sidebar-knowledge {
+        padding: 1.5rem;
+    }
+
+    .full-width-section {
+        padding: 2rem 1rem;
+        margin: 1.5rem -1rem;
+        width: calc(100% + 2rem);
+        gap: 2rem;
+    }
+
+    .stat-card {
+        padding: 1.5rem 1rem;
+    }
+
+    .stat-number {
+        font-size: 3rem;
+    }
+
+    .stat-label {
+        font-size: 0.75rem;
+    }
+
+    .magazine-footer {
+        padding: 3rem 1rem;
+    }
+
+    .footer-quote {
+        font-size: 1.25rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .original-link-btn {
+        padding: 0.65rem 1.25rem;
+        font-size: 0.7rem;
+    }
+
+    .insight-quote {
+        font-size: clamp(1.3rem, 3vw, 2.2rem);
+    }
+
+    .insight-translation {
+        font-size: 1rem;
+        padding-left: 1.5rem;
+    }
+
+    .quote-block {
+        padding: 2rem 1.5rem;
+    }
+
+    .visual-text {
+        font-size: clamp(6rem, 20vw, 16rem);
+    }
+}
+
 /* Animation */
 .fade-in {
     opacity: 0;
