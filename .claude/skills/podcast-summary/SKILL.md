@@ -4,11 +4,12 @@ name: podcast-summary
 description: Summarizes podcast transcript into a JSON format and outputs a Jekyll html post.  
 ---
 
-1. 당신은 기술 팟캐스트 전문 요약가입니다. 주어진 팟캐스트 트랜스크립트를 아래 형식에 맞춰 한국어로 요약해주세요.
-2. 요약 결과는 .claude/skills/podcast-summary/magazine-template.json 형식대로 내용에 맞게 구조화 합니다.
-3. 생성된 JSON 파일은 .claude/skills/podcast-summary/transcripts/json 폴더 밑에 둡니다. 만약 폴더가 없다면 만들어서 넣으세요.
-4. 요약이 완료된 후에는 .claude/skills/podcast-summary/json_to_magazine.py 스크립트를 사용해서 jekyll 포스트 형식의 html 파일을 만들어 냅니다.
-5. 원본 소스 링크가 제공되는 경우, hero.original_link 필드에 URL을 추가하세요. 이 링크는 hero 섹션에 "Visit Original Source" 버튼으로 표시됩니다. 
+1. 당신은 기술 팟캐스트 전문 요약가입니다. 주어진 팟캐스트 트랜스크립트를 아래 형식에 맞춰 한국어로 요약해주세요. 원문 링크가 있다면 방문해서 날짜와 제목, 대화 참여자에 대한 정보를 얻으세요. 
+2. 요약 결과는 .claude/skills/podcast-summary/magazine-template.json 형식대로 내용에 맞게 구조화 합니다. title 은 [인터뷰이 이름 : 대화주제]로 구성합니다. 
+3. description 은 인터뷰이의 출신을 알 수 있도록 하고, 대화의 주제를 간단히 드러내줍니다. 
+4. 생성된 JSON 파일은 .claude/skills/podcast-summary/transcripts/json 폴더 밑에 둡니다. 만약 폴더가 없다면 만들어서 넣으세요.
+5. 요약이 완료된 후에는 .claude/skills/podcast-summary/json_to_magazine.py 스크립트를 사용해서 jekyll 포스트 형식의 html 파일을 만들어 냅니다.
+6. 원본 소스 링크가 제공되는 경우, hero.original_link 필드에 URL을 추가하세요. 이 링크는 hero 섹션에 "Visit Original Source" 버튼으로 표시됩니다. 
 
 ## 요약 규칙 
 
@@ -24,11 +25,14 @@ description: Summarizes podcast transcript into a JSON format and outputs a Jeky
 
 A: [4-6문장의 답변. 답변을 도출하는데 반드시 필요하다면 최대 10문장 까지 길어질 수 있습니다. 대화에서 나온 핵심 내용을 요약하되, 구체적인 숫자, 예시, 인용이 있다면 포함합니다.]
 
-만약, followup question 이 있다면 이 질문과 이에 대한 답변도 요약합니다. 
+A2: [만약, followup question 이 있다면 이 질문과 이에 대한 답변도 요약합니다. follow up question 은 반드시 맥락 이해해 필요한 경우에 추가합니다.]
 
 **관련 배경지식**
 
 *[개념명]*: [개념 설명 2-3문장]. [구체적인 예시 1-2문장].
+
+### [Footer] 
+[Footer 에는 대화의 주제를 관통하는 가장 핵심적인 원문의 문장을 인용하여 구성합니다.]
 
 ---
 
@@ -43,7 +47,7 @@ A: [4-6문장의 답변. 답변을 도출하는데 반드시 필요하다면 최
 
 ### 답변(A) 작성 규칙
 - 답변은 화자의 1인칭 시점에서 작성하도록 합니다.
-- 4-6문장으로 제한
+- 4-6문장으로 제한합니다. 단 추가적인 설명을 통해서 보다 논리적이고 온전한 답변을 구성할 수 있다면 최대 10문장까지 허용합니다. 
 - 대화에서 언급된 구체적인 숫자, 비유, 예시를 포함
 - 화자의 독특한 관점이나 통찰이 있다면 반드시 포함
 - 여러 화자의 의견이 있다면 균형있게 반영
