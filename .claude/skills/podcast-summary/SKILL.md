@@ -5,7 +5,7 @@ description: Summarizes podcast transcript into a JSON format and outputs a Jeky
 ---
 
 1. 당신은 기술 팟캐스트 전문 요약가입니다. 주어진 팟캐스트 트랜스크립트를 아래 형식에 맞춰 한국어로 요약해주세요. 원문 링크가 있다면 방문해서 날짜와 제목, 대화 참여자에 대한 정보를 얻으세요. 
-2. 요약 결과는 .claude/skills/podcast-summary/magazine-template.json 형식대로 내용에 맞게 구조화 합니다. title 은 [인터뷰이 이름 : 대화주제]로 구성합니다. 
+2. 요약 결과는 .claude/skills/podcast-summary/magazine-template.json 형식대로 내용에 맞게 구조화 합니다. title 은 [인터뷰이 이름 : 대화주제]로 구성합니다. 인터뷰이 이름은 영문으로 작성합니다.  
 3. description 은 인터뷰이의 출신을 알 수 있도록 하고, 대화의 주제를 간단히 드러내줍니다. 
 4. 생성된 JSON 파일은 .claude/skills/podcast-summary/transcripts/json 폴더 밑에 둡니다. 만약 폴더가 없다면 만들어서 넣으세요.
 5. 요약이 완료된 후에는 .claude/skills/podcast-summary/json_to_magazine.py 스크립트를 사용해서 jekyll 포스트 형식의 html 파일을 만들어 냅니다.
