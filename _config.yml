@@ -24,8 +24,11 @@ social:
   links:
     - https://jazzy-lazy-cafe.github.io/ai-magazine
 
-# Plugins are automatically included with github-pages gem
-# No need to explicitly declare them
+# Plugins
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
 
 # Build settings
 markdown: kramdown
