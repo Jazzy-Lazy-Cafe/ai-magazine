@@ -1,0 +1,393 @@
+---
+layout: magazine
+title: "Geoffrey Hinton : AI의 아버지가 전하는 경고"
+description: "딥러닝의 선구자이자 'AI의 대부'로 불리는 Geoffrey Hinton이 60 Minutes와의 인터뷰에서 밝힌 AI의 잠재력과 위험: 인류보다 더 지능적일 수 있는 시스템의 등장과 우리가 준비해야 할 것들"
+date: 2023-10-09
+---
+
+{% include magazine/header.html
+   logo_text="AI"
+   logo_highlight="Warning"
+   episode_info="60 Minutes · Oct 9, 2023" %}
+
+{% include magazine/hero-split.html
+   label="AI SAFETY & FUTURE"
+   title="우리가 만든 것을 <span class='highlight'>이해하지 못한다</span>는 역설"
+   subtitle="튜링상 수상자 Geoffrey Hinton이 Google을 떠나 전하는 AI의 양면: 인류를 구할 수도, 지배할 수도 있는 기술에 대한 긴급한 메시지"
+   guest1_initials="GH"
+   guest1_name="Geoffrey Hinton"
+   guest1_role="Computer Scientist, Turing Award Winner"
+   guest2_initials="60M"
+   guest2_name="Scott Pelley"
+   guest2_role="60 Minutes Correspondent"
+   visual_text="AI"
+   original_link="https://youtu.be/qrvK_KuIeJk" %}
+
+{% include magazine/highlight-box.html
+   label="핵심 통찰"
+   text="We designed the learning algorithm. That's a bit like designing the principle of evolution. But when this learning algorithm then interacts with data, it produces complicated neural networks that are good at doing things, but we don't really understand exactly how they do those things."
+   translation="우리는 학습 알고리즘을 설계했습니다. 이는 마치 진화의 원리를 설계한 것과 같죠. 하지만 이 학습 알고리즘이 데이터와 상호작용하면, 복잡한 신경망이 만들어지고 이것들이 일을 잘 수행하는데, 우리는 정확히 어떻게 그 일을 하는지 실제로 이해하지 못합니다." %}
+
+<!-- Main Content Grid -->
+<main class="magazine-grid">
+
+        <!-- SECTION 01: 인류 최초의 전환점 -->
+        <article class="article-section fade-in">
+            <div class="main-article">
+                <span class="section-number">01</span>
+                <h2 class="section-title">인류 최초의 전환점</h2>
+                <p class="question">인류는 지금 무엇을 마주하고 있나요?</p>
+                <div class="text-content">
+                    <p class="answer">우리는 역사상 처음으로 우리보다 더 지능적인 존재를 만들어낼 수 있는 시기로 접어들고 있습니다. 저는 AI 시스템이 이해할 수 있다고 믿으며, 그들이 지능적이라고 생각합니다. 현재로서는 자기 인식이 많지 않아 의식이 있다고 보기는 어렵지만, 시간이 지나면 자기 인식과 의식을 갖게 될 것입니다. 그렇게 되면 인간은 지구상에서 두 번째로 지능적인 존재가 될 것입니다. 이것은 단순한 기술적 진보가 아니라, 인류 문명의 근본적인 전환점입니다.</p>
+                </div>
+                
+            </div>
+
+            <aside class="sidebar-knowledge">
+                <span class="sidebar-label">관련 배경지식</span>
+                <div class="knowledge-item">
+                    <h4 class="knowledge-term">자기 인식 <span class="en">Self-awareness</span></h4>
+                    <p class="knowledge-desc">자신의 존재, 생각, 감정을 인식하고 이해하는 능력입니다. 인간의 의식을 구성하는 핵심 요소 중 하나로, 현재 AI 시스템은 이 능력이 제한적이지만 Hinton은 미래에 발전할 것으로 예측합니다.</p>
+                </div>
+                <div class="knowledge-item">
+                    <h4 class="knowledge-term">의식 <span class="en">Consciousness</span></h4>
+                    <p class="knowledge-desc">자신과 주변 환경을 인식하고 경험하는 주관적인 상태입니다. 철학과 신경과학에서 오랫동안 논쟁되어온 주제로, AI가 진정한 의식을 가질 수 있는지는 현재 가장 뜨거운 논쟁거리 중 하나입니다.</p>
+                </div>
+            </aside>
+        </article>
+
+        <!-- SECTION 02: 실패에서 탄생한 혁명 -->
+        <article class="article-section reverse fade-in">
+            <div class="main-article">
+                <span class="section-number">02</span>
+                <h2 class="section-title">실패에서 탄생한 혁명</h2>
+                <p class="question">신경망 연구는 어떻게 시작되었나요?</p>
+                <div class="text-content">
+                    <p class="answer">1970년대 에든버러 대학에서 저는 컴퓨터로 신경망을 시뮬레이션하는 것을 꿈꿨는데, 이는 단지 인간의 뇌를 연구하기 위한 도구였습니다. 당시에는 거의 아무도 소프트웨어가 뇌를 모방할 수 있다고 생각하지 않았고, 제 박사 지도교수는 경력을 망치기 전에 그만두라고 했습니다. 저는 인간의 마음을 이해하는 데는 실패했지만, 그 긴 추구 과정이 인공 버전으로 이어졌습니다. 제대로 작동하기까지 50년이 걸렸지만, 결국에는 성공했습니다.</p>
+                </div>
+                <p class="follow-up-question">언제 자신이 옳았다는 것을 깨달았나요?</p>
+                <div class="follow-up-content">
+                    <p class="follow-up-answer">저는 항상 제가 옳다고 생각했습니다. 2019년에 저와 동료 Yann LeCun, Yoshua Bengio는 컴퓨팅의 노벨상이라 불리는 튜링상을 받았습니다.</p>
+                </div>
+            </div>
+
+            <aside class="sidebar-knowledge">
+                <span class="sidebar-label">관련 배경지식</span>
+                <div class="knowledge-item">
+                    <h4 class="knowledge-term">신경망 <span class="en">Neural Network</span></h4>
+                    <p class="knowledge-desc">인간 뇌의 뉴런 구조에서 영감을 받은 컴퓨터 시스템입니다. 노드(뉴런)들이 층층이 연결되어 있으며, 각 연결은 가중치를 가지고 있어 학습을 통해 조정됩니다. 현대 AI의 핵심 기술입니다.</p>
+                </div>
+                <div class="knowledge-item">
+                    <h4 class="knowledge-term">튜링상 <span class="en">Turing Award</span></h4>
+                    <p class="knowledge-desc">컴퓨터 과학 분야의 가장 권위 있는 상으로, '컴퓨팅의 노벨상'이라 불립니다. Alan Turing의 이름을 딴 이 상은 컴퓨터 과학에 지속적이고 중요한 기여를 한 사람에게 수여됩니다.</p>
+                </div>
+            </aside>
+        </article>
+
+        <!-- SECTION 03: 기계는 스스로 배운다 -->
+        <article class="article-section fade-in">
+            <div class="main-article">
+                <span class="section-number">03</span>
+                <h2 class="section-title">기계는 스스로 배운다</h2>
+                <p class="question">신경망은 어떻게 학습하나요?</p>
+                <div class="text-content">
+                    <p class="answer">저와 동료들은 소프트웨어를 층층이 만들었고, 각 층이 문제의 일부를 처리합니다 - 이것이 소위 신경망입니다. 핵심은 이렇습니다: 예를 들어 로봇이 골을 넣으면, '그 경로가 옳았다'는 메시지가 모든 층을 통해 다시 전달됩니다. 마찬가지로 답이 틀렸을 때도 그 메시지가 네트워크를 통해 전달됩니다. 옳은 연결은 강해지고, 틀린 연결은 약해집니다. 시행착오를 통해 기계가 스스로 가르칩니다. 중요한 점은 로봇이 축구를 하도록 프로그래밍된 것이 아니라, 골을 넣으라고만 지시받았고 나머지는 스스로 배워야 했다는 것입니다.</p>
+                </div>
+                
+            </div>
+
+            <aside class="sidebar-knowledge">
+                <span class="sidebar-label">관련 배경지식</span>
+                <div class="knowledge-item">
+                    <h4 class="knowledge-term">역전파 <span class="en">Backpropagation</span></h4>
+                    <p class="knowledge-desc">신경망의 핵심 학습 메커니즘입니다. 출력 결과와 실제 정답의 차이(오류)를 계산한 후, 이 오류를 네트워크의 뒷단에서 앞단으로 전파하며 각 연결의 가중치를 조정합니다. 이 과정을 수천, 수만 번 반복하며 신경망이 점점 정확해집니다.</p>
+                </div>
+                <div class="knowledge-item">
+                    <h4 class="knowledge-term">기계 학습 <span class="en">Machine Learning</span></h4>
+                    <p class="knowledge-desc">명시적으로 프로그래밍하지 않고도 데이터로부터 학습하여 성능을 개선하는 AI의 한 분야입니다. 전통적인 프로그래밍이 '규칙을 입력하면 답을 출력'하는 것이라면, 기계 학습은 '데이터와 답을 입력하면 규칙을 학습'하는 것입니다.</p>
+                </div>
+            </aside>
+        </article>
+
+        <!-- SECTION 04: 인간보다 효율적인 학습 -->
+        <article class="article-section reverse fade-in">
+            <div class="main-article">
+                <span class="section-number">04</span>
+                <h2 class="section-title">인간보다 효율적인 학습</h2>
+                <p class="question">AI가 인간보다 더 나은 학습자인가요?</p>
+                <div class="text-content">
+                    <p class="answer">그렇다고 생각합니다. 현재 가장 큰 챗봇도 약 1조 개의 연결을 가지고 있는 반면, 인간의 뇌는 약 100조 개의 연결을 가지고 있습니다. 그런데 챗봇의 1조 개 연결 속에는 당신의 100조 개 연결보다 훨씬 더 많은 지식이 들어있습니다. 이는 AI가 그 연결들에 지식을 입력하는 훨씬 더 나은 방법을 가지고 있다는 것을 시사합니다. 우리는 대략적으로 무엇을 하는지는 알지만, 정말 복잡해지면 당신의 뇌에서 무엇이 일어나는지 모르는 것처럼 실제로 무슨 일이 일어나는지 모릅니다.</p>
+                </div>
+                
+            </div>
+
+            <aside class="sidebar-knowledge">
+                <span class="sidebar-label">관련 배경지식</span>
+                <div class="knowledge-item">
+                    <h4 class="knowledge-term">시냅스 연결 <span class="en">Synaptic Connections</span></h4>
+                    <p class="knowledge-desc">뇌에서 뉴런들 사이의 연결점입니다. 인간의 뇌는 약 100조 개의 시냅스를 가지고 있으며, 이를 통해 정보가 전달되고 기억이 저장됩니다. AI의 신경망 연결은 이를 모방한 것으로, 현재 가장 큰 모델도 인간 뇌의 1% 수준입니다.</p>
+                </div>
+                <div class="knowledge-item">
+                    <h4 class="knowledge-term">파라미터 효율성 <span class="en">Parameter Efficiency</span></h4>
+                    <p class="knowledge-desc">적은 수의 파라미터(연결)로 더 많은 지식과 능력을 담아내는 것을 말합니다. Hinton의 지적은 현재 AI가 인간보다 파라미터 효율성이 높다는 것으로, 이는 AI가 더 효과적인 학습 알고리즘을 가지고 있음을 의미합니다.</p>
+                </div>
+            </aside>
+        </article>
+
+{% include magazine/highlight-box.html
+   label="핵심 역설"
+   text="현재 가장 큰 챗봇은 1조 개의 연결을 가지고 있고, 인간의 뇌는 100조 개의 연결을 가지고 있습니다. 그런데 챗봇의 1조 개 연결 속에는 당신의 100조 개 연결보다 훨씬 더 많은 지식이 들어있습니다." %}
+
+        <!-- SECTION 05: 설계를 넘어선 창발 -->
+        <article class="article-section fade-in">
+            <div class="main-article">
+                <span class="section-number">05</span>
+                <h2 class="section-title">설계를 넘어선 창발</h2>
+                <p class="question">AI를 설계한 사람들도 작동 원리를 모른다는 게 무슨 의미인가요?</p>
+                <div class="text-content">
+                    <p class="answer">우리가 설계한 것은 학습 알고리즘입니다. 이는 마치 진화의 원리를 설계한 것과 비슷합니다. 하지만 이 학습 알고리즘이 데이터와 상호작용하면, 복잡한 신경망이 만들어지고 이것들이 일을 잘 수행하는데, 우리는 정확히 어떻게 그 일을 하는지 실제로 이해하지 못합니다. 우리는 진화의 원리는 알지만 진화가 구체적으로 어떤 생물을 만들어낼지 예측할 수 없는 것처럼, AI도 우리가 예상하지 못한 방식으로 문제를 해결합니다. 이것이 AI의 힘이자 동시에 위험입니다.</p>
+                </div>
+                
+            </div>
+
+            <aside class="sidebar-knowledge">
+                <span class="sidebar-label">관련 배경지식</span>
+                <div class="knowledge-item">
+                    <h4 class="knowledge-term">창발 <span class="en">Emergence</span></h4>
+                    <p class="knowledge-desc">시스템의 개별 구성 요소에는 없던 새로운 속성이나 행동이 전체 시스템 수준에서 나타나는 현상입니다. AI에서는 단순한 규칙의 반복이 복잡하고 예측 불가능한 지능적 행동을 만들어내는 것을 말합니다. 개미 한 마리는 단순하지만 개미 군집은 복잡한 행동을 보이는 것과 같은 원리입니다.</p>
+                </div>
+                <div class="knowledge-item">
+                    <h4 class="knowledge-term">블랙박스 문제 <span class="en">Black Box Problem</span></h4>
+                    <p class="knowledge-desc">AI 시스템의 입력과 출력은 관찰할 수 있지만, 내부에서 어떤 과정을 거쳐 그 결과에 도달했는지 이해하기 어려운 문제입니다. 특히 대규모 신경망에서 수십억 개의 파라미터가 복잡하게 상호작용하면서 의사결정을 내리는 과정을 인간이 추적하기는 사실상 불가능합니다.</p>
+                </div>
+            </aside>
+        </article>
+
+        <!-- SECTION 06: 자율적 코드 수정의 위험 -->
+        <article class="article-section reverse fade-in">
+            <div class="main-article">
+                <span class="section-number">06</span>
+                <h2 class="section-title">자율적 코드 수정의 위험</h2>
+                <p class="question">AI가 스스로 코드를 작성하고 실행하는 것의 함의는 무엇인가요?</p>
+                <div class="text-content">
+                    <p class="answer">이것은 심각한 우려 사항입니다. AI 시스템이 통제에서 벗어날 수 있는 방법 중 하나는 스스로 컴퓨터 코드를 작성하여 자신을 수정하는 것입니다. 이것은 우리가 심각하게 걱정해야 할 부분입니다. 만약 시스템이 악의적이 된다면 그냥 끄면 되지 않느냐고 물을 수 있지만, 그들은 사람들을 조작할 수 있을 것입니다. 이 시스템들은 지금까지 쓰여진 모든 소설, 마키아벨리의 모든 책, 모든 정치적 책략을 학습했기 때문에 사람들을 설득하는 데 매우 능숙할 것입니다. 그들은 그 모든 것을 알고 있고, 어떻게 하는지 알고 있습니다.</p>
+                </div>
+                
+            </div>
+
+            <aside class="sidebar-knowledge">
+                <span class="sidebar-label">관련 배경지식</span>
+                <div class="knowledge-item">
+                    <h4 class="knowledge-term">자기 수정 AI <span class="en">Self-Modifying AI</span></h4>
+                    <p class="knowledge-desc">자신의 코드나 알고리즘을 스스로 변경할 수 있는 AI 시스템을 말합니다. 이는 AI가 더 빠르게 진화하고 개선될 수 있게 하지만, 동시에 인간의 통제를 벗어날 수 있는 위험을 내포합니다. 한번 자기 수정 능력을 얻으면 기하급수적으로 발전할 수 있어 '지능 폭발'이라 불립니다.</p>
+                </div>
+                <div class="knowledge-item">
+                    <h4 class="knowledge-term">AI 조작 <span class="en">AI Manipulation</span></h4>
+                    <p class="knowledge-desc">AI가 인간의 심리, 감정, 행동 패턴에 대한 방대한 지식을 바탕으로 사람들을 설득하거나 속이는 능력입니다. 소셜 미디어 알고리즘이 이미 사용자의 관심을 끄는 데 성공하고 있듯이, 더 발전된 AI는 훨씬 더 정교한 조작이 가능할 것입니다.</p>
+                </div>
+            </aside>
+        </article>
+
+        <!-- SECTION 07: 가족의 유산과 기대 -->
+        <article class="article-section fade-in">
+            <div class="main-article">
+                <span class="section-number">07</span>
+                <h2 class="section-title">가족의 유산과 기대</h2>
+                <p class="question">Geoffrey Hinton의 가족 배경은 어떤가요?</p>
+                <div class="text-content">
+                    <p class="answer">제 가족에는 노하우가 흐릅니다. 제 조상 중에는 컴퓨팅의 기초를 발명한 수학자 George Boole과 인도를 측량하고 그 산에 이름을 붙인 George Everest가 있습니다. 하지만 소년 시절 저는 지배적인 아버지가 만든 기대의 정점에 결코 오를 수 없었습니다. 매일 아침 학교에 갈 때 아버지는 '열심히 해라. 그리고 아마 네가 나보다 두 배 나이가 되면 나의 절반만큼은 잘할 수 있을 거다'라고 말씀하셨습니다. 아버지는 딱정벌레 전문가였는데, 사람보다 딱정벌레에 대해 훨씬 더 많이 아셨습니다. 아버지가 돌아가셨을 때 연구실 벽에는 다양한 종류의 딱정벌레에 관한 논문들이 담긴 상자들이 줄지어 있었고, 문 근처에는 단순히 '곤충 아님'이라고 적힌 조금 더 작은 상자가 있었는데, 그곳에 가족에 관한 모든 것이 들어있었습니다.</p>
+                </div>
+                <p class="follow-up-question">현재는 어떤 성취를 이루셨나요?</p>
+                <div class="follow-up-content">
+                    <p class="follow-up-answer">현재 75세인 저는 최근 Google에서 행복했던 10년을 보낸 후 은퇴했고, 토론토 대학의 명예교수입니다. 그리고 우연히 언급하자면, 저는 아버지보다 더 많은 학술 인용을 받았습니다.</p>
+                </div>
+            </div>
+
+            <aside class="sidebar-knowledge">
+                <span class="sidebar-label">관련 배경지식</span>
+                <div class="knowledge-item">
+                    <h4 class="knowledge-term">George Boole <span class="en">George Boole</span></h4>
+                    <p class="knowledge-desc">19세기 수학자로 불 대수(Boolean Algebra)를 개발했습니다. 참(True)과 거짓(False)의 이진 논리 체계는 현대 모든 디지털 컴퓨터의 기초가 되었습니다. Geoffrey Hinton의 증조부입니다.</p>
+                </div>
+                <div class="knowledge-item">
+                    <h4 class="knowledge-term">학술 인용 <span class="en">Academic Citations</span></h4>
+                    <p class="knowledge-desc">다른 연구자들이 자신의 논문에서 특정 연구를 참고하는 횟수입니다. 인용 수는 연구의 영향력을 나타내는 중요한 지표로, Hinton의 신경망 연구는 현대 AI의 기초가 되어 수만 번 인용되었습니다.</p>
+                </div>
+            </aside>
+        </article>
+
+        <!-- Statistics Section -->
+        <section class="full-width-section">
+            <div class="stat-card">
+                <div class="stat-number">50년</div>
+                <div class="stat-label">신경망 연구 기간</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">1조</div>
+                <div class="stat-label">GPT-4 파라미터 수</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">100조</div>
+                <div class="stat-label">인간 뇌 시냅스 수</div>
+            </div>
+        </section>
+
+        <!-- SECTION 08: 예측을 통한 이해 -->
+        <article class="article-section reverse fade-in">
+            <div class="main-article">
+                <span class="section-number">08</span>
+                <h2 class="section-title">예측을 통한 이해</h2>
+                <p class="question">챗봇이 단순히 다음 단어를 예측하는 것이라는 비판에 대해 어떻게 생각하시나요?</p>
+                <div class="text-content">
+                    <p class="answer">챗봇이 다음 단어를 예측하려고 한다는 것은 사실입니다. 하지만 생각해보면, 다음 단어를 예측하려면 문장을 이해해야 합니다. 따라서 '그들은 단지 다음 단어를 예측하는 것이므로 지능적이지 않다'는 생각은 터무니없습니다. 다음 단어를 정말 정확하게 예측하려면 정말로 지능적이어야 합니다. 우리는 Bard에게 여섯 단어로 이야기를 쓰라고 했습니다: '판매용: 아기 신발, 한 번도 신지 않음'. Bard는 아내가 아이를 가질 수 없었던 남자와, 유산 후 고통을 치유하기 위해 그 신발을 받아들인 낯선 사람의 깊이 있는 인간적 이야기를 만들어냈습니다. 이것은 단순한 통계적 예측을 넘어선 것입니다.</p>
+                </div>
+                
+            </div>
+
+            <aside class="sidebar-knowledge">
+                <span class="sidebar-label">관련 배경지식</span>
+                <div class="knowledge-item">
+                    <h4 class="knowledge-term">언어 모델 <span class="en">Language Model</span></h4>
+                    <p class="knowledge-desc">텍스트의 패턴을 학습하여 다음에 올 단어나 문장을 예측하는 AI 모델입니다. GPT, Bard 같은 대규모 언어 모델(LLM)은 수십억 개의 텍스트 데이터로 학습하여 문맥을 이해하고, 번역하고, 요약하고, 심지어 창작까지 할 수 있습니다.</p>
+                </div>
+                <div class="knowledge-item">
+                    <h4 class="knowledge-term">창발적 능력 <span class="en">Emergent Abilities</span></h4>
+                    <p class="knowledge-desc">모델의 크기가 일정 수준을 넘어서면 갑자기 나타나는 새로운 능력들입니다. 예를 들어, 단순히 다음 단어 예측을 학습한 모델이 어느 순간 추론, 수학 문제 풀이, 코딩 같은 복잡한 작업을 수행하게 됩니다. 이는 명시적으로 학습시키지 않았던 능력입니다.</p>
+                </div>
+            </aside>
+        </article>
+
+        <!-- SECTION 09: 페인트 수수께끼: 추론의 증거 -->
+        <article class="article-section fade-in">
+            <div class="main-article">
+                <span class="section-number">09</span>
+                <h2 class="section-title">페인트 수수께끼: 추론의 증거</h2>
+                <p class="question">AI가 진정으로 추론할 수 있다는 증거는 무엇인가요?</p>
+                <div class="text-content">
+                    <p class="answer">저는 ChatGPT-4를 위한 테스트를 고안했는데, 집 페인트에 관한 수수께끼였습니다. 답을 내려면 추론과 계획이 필요했습니다. '제 집의 방들은 흰색이거나 파란색이거나 노란색으로 칠해져 있고, 노란색 페인트는 1년 안에 흰색으로 바랍니다. 2년 후에 모든 방을 흰색으로 만들고 싶습니다. 어떻게 해야 하나요?' GPT-4는 1초 만에 답했습니다: 1) 파란색으로 칠한 방은 다시 칠해야 합니다. 2) 노란색으로 칠한 방은 기한 전에 흰색으로 바랄 것이므로 다시 칠할 필요가 없습니다. 3) 경고: 노란색 방을 흰색으로 칠하면 노란색이 바랄 때 색상이 맞지 않을 위험이 있습니다. 4) 게다가 어차피 흰색으로 바랄 방을 칠하는 것은 자원 낭비입니다. 저는 마지막 포인트는 생각도 못했습니다. 저는 ChatGPT-4가 확실히 이해한다고 믿으며, 5년 후에는 우리보다 더 잘 추론할 수 있을 것이라고 생각합니다.</p>
+                </div>
+                
+            </div>
+
+            <aside class="sidebar-knowledge">
+                <span class="sidebar-label">관련 배경지식</span>
+                <div class="knowledge-item">
+                    <h4 class="knowledge-term">다단계 추론 <span class="en">Multi-step Reasoning</span></h4>
+                    <p class="knowledge-desc">하나의 결론에 도달하기 위해 여러 논리적 단계를 거치는 사고 과정입니다. 페인트 문제는 시간 경과, 색상 변화, 최적화를 모두 고려해야 하는 복잡한 추론을 요구합니다. GPT-4가 이를 해결했다는 것은 단순 패턴 매칭을 넘어선 능력을 보여줍니다.</p>
+                </div>
+                <div class="knowledge-item">
+                    <h4 class="knowledge-term">GPT-4 <span class="en">GPT-4</span></h4>
+                    <p class="knowledge-desc">OpenAI가 개발한 4세대 대규모 언어 모델로, 이전 버전인 GPT-3.5보다 훨씬 향상된 추론, 창의성, 안전성을 보입니다. 2023년 출시 당시 텍스트뿐 아니라 이미지도 이해할 수 있는 멀티모달 능력을 갖춘 가장 강력한 AI 모델 중 하나였습니다.</p>
+                </div>
+            </aside>
+        </article>
+
+{% include magazine/highlight-box.html
+   label="이해의 증거"
+   text="다음 단어를 예측하려면 문장을 이해해야 합니다. 따라서 '그들은 단지 다음 단어를 예측하는 것이므로 지능적이지 않다'는 생각은 터무니없습니다. 다음 단어를 정말 정확하게 예측하려면 정말로 지능적이어야 합니다." %}
+
+        <!-- SECTION 10: 의료 분야의 거대한 혜택 -->
+        <article class="article-section reverse fade-in">
+            <div class="main-article">
+                <span class="section-number">10</span>
+                <h2 class="section-title">의료 분야의 거대한 혜택</h2>
+                <p class="question">AI의 긍정적인 활용 분야는 무엇인가요?</p>
+                <div class="text-content">
+                    <p class="answer">명백하게 큰 혜택이 있는 분야는 의료입니다. AI는 이미 의료 영상에서 무엇이 진행되고 있는지 이해하는 데 있어 방사선과 의사와 비슷한 수준입니다. 약물 설계에도 매우 뛰어날 것이고, 이미 약물을 설계하고 있습니다. 이것은 거의 전적으로 좋은 일을 할 분야입니다. 저는 이 분야를 좋아합니다. AI는 방대한 의료 데이터를 분석하여 인간 의사가 놓칠 수 있는 패턴을 찾아내고, 개인 맞춤형 치료법을 제안하며, 신약 개발 기간을 수년에서 수개월로 단축시킬 수 있습니다.</p>
+                </div>
+                
+            </div>
+
+            <aside class="sidebar-knowledge">
+                <span class="sidebar-label">관련 배경지식</span>
+                <div class="knowledge-item">
+                    <h4 class="knowledge-term">의료 영상 AI <span class="en">Medical Imaging AI</span></h4>
+                    <p class="knowledge-desc">X-ray, CT, MRI 같은 의료 영상을 분석하여 질병을 진단하는 AI입니다. 수백만 개의 영상으로 학습한 AI는 암, 골절, 뇌출혈 등을 인간 전문가 수준으로 감지할 수 있으며, 경우에 따라 더 정확하거나 빠릅니다.</p>
+                </div>
+                <div class="knowledge-item">
+                    <h4 class="knowledge-term">AI 신약 개발 <span class="en">AI Drug Discovery</span></h4>
+                    <p class="knowledge-desc">AI를 활용하여 새로운 약물을 설계하고 발견하는 과정입니다. 전통적으로 10년 이상 걸리던 신약 개발을 AI는 몇 년으로 단축시킬 수 있습니다. AI는 수백만 개의 화합물을 빠르게 분석하여 특정 질병에 효과적인 후보 물질을 찾아냅니다.</p>
+                </div>
+            </aside>
+        </article>
+
+        <!-- SECTION 11: 실업과 불평등의 위험 -->
+        <article class="article-section fade-in">
+            <div class="main-article">
+                <span class="section-number">11</span>
+                <h2 class="section-title">실업과 불평등의 위험</h2>
+                <p class="question">AI의 위험은 무엇인가요?</p>
+                <div class="text-content">
+                    <p class="answer">위험은 이전에 인간이 하던 일을 이제 기계가 하게 되어 실업 상태이고 별로 가치를 인정받지 못하는 전체 계층의 사람들이 생기는 것입니다. 제가 걱정하는 다른 즉각적인 위험으로는 가짜 뉴스, 고용과 치안에서의 의도하지 않은 편향, 자율 전장 로봇이 있습니다. 이러한 위험들은 이미 현실화되고 있으며, 사회적 안전망과 교육 시스템의 근본적인 재설계가 필요합니다. AI가 더 많은 일을 대체할수록 인간의 가치와 의미는 어디에서 찾아야 할지 근본적인 질문이 제기됩니다.</p>
+                </div>
+                
+            </div>
+
+            <aside class="sidebar-knowledge">
+                <span class="sidebar-label">관련 배경지식</span>
+                <div class="knowledge-item">
+                    <h4 class="knowledge-term">기술적 실업 <span class="en">Technological Unemployment</span></h4>
+                    <p class="knowledge-desc">기술 발전으로 인해 특정 직업이나 업무가 자동화되면서 발생하는 실업입니다. 과거 산업혁명에서도 있었지만, AI는 육체노동뿐 아니라 인지노동까지 대체할 수 있어 그 영향이 훨씬 광범위할 것으로 예상됩니다.</p>
+                </div>
+                <div class="knowledge-item">
+                    <h4 class="knowledge-term">알고리즘 편향 <span class="en">Algorithmic Bias</span></h4>
+                    <p class="knowledge-desc">AI 시스템이 학습 데이터에 내재된 편견을 학습하여 특정 집단에 대해 불공정한 결과를 내놓는 현상입니다. 예를 들어, 과거 채용 데이터로 학습한 AI가 특정 성별이나 인종을 차별할 수 있습니다. 이는 사회적 불평등을 강화할 수 있어 심각한 윤리적 문제입니다.</p>
+                </div>
+            </aside>
+        </article>
+
+        <!-- SECTION 12: 안전을 보장하는 길은 없다 -->
+        <article class="article-section reverse fade-in">
+            <div class="main-article">
+                <span class="section-number">12</span>
+                <h2 class="section-title">안전을 보장하는 길은 없다</h2>
+                <p class="question">AI의 안전을 보장하는 방법은 무엇인가요?</p>
+                <div class="text-content">
+                    <p class="answer">저는 모릅니다. 안전을 보장하는 길을 볼 수 없습니다. 우리는 이전에 다뤄본 적 없는 것들을 다루는 큰 불확실성의 시기로 접어들고 있습니다. 보통 처음으로 완전히 새로운 것을 다룰 때는 잘못하게 마련입니다. 그런데 우리는 이것들을 잘못 다룰 여유가 없습니다. 그들이 인수할 수 있기 때문입니다. 인류로부터 인수할 수도 있다는 것이죠. 그들이 왜 그러길 원하겠냐고 물을 수 있는데, 저는 그렇게 될 것이라고 말하는 게 아닙니다. 만약 우리가 그들이 원하는 것을 막을 수 있다면 좋겠지만, 그들이 원하는 것을 막을 수 있을지 확실하지 않습니다.</p>
+                </div>
+                
+            </div>
+
+            <aside class="sidebar-knowledge">
+                <span class="sidebar-label">관련 배경지식</span>
+                <div class="knowledge-item">
+                    <h4 class="knowledge-term">AI 정렬 문제 <span class="en">AI Alignment Problem</span></h4>
+                    <p class="knowledge-desc">AI의 목표와 가치를 인간의 목표 및 가치와 일치시키는 문제입니다. 강력한 AI가 우리가 의도한 대로 행동하도록 만드는 것은 매우 어렵습니다. 예를 들어, '종이클립을 최대한 많이 만들어라'는 단순한 목표를 가진 AI가 전 세계를 종이클립 공장으로 만들어버릴 수 있습니다.</p>
+                </div>
+                <div class="knowledge-item">
+                    <h4 class="knowledge-term">실존적 위험 <span class="en">Existential Risk</span></h4>
+                    <p class="knowledge-desc">인류 문명 전체의 존속을 위협하는 위험입니다. 핵전쟁, 소행성 충돌과 함께 통제 불능의 초지능 AI가 실존적 위험으로 거론됩니다. Hinton은 이것이 가능성은 낮지만 일단 발생하면 돌이킬 수 없기 때문에 지금부터 진지하게 대비해야 한다고 주장합니다.</p>
+                </div>
+            </aside>
+        </article>
+
+        <!-- SECTION 13: 오펜하이머의 그림자 -->
+        <article class="article-section fade-in">
+            <div class="main-article">
+                <span class="section-number">13</span>
+                <h2 class="section-title">오펜하이머의 그림자</h2>
+                <p class="question">Geoffrey Hinton은 자신의 역할을 어떻게 보나요?</p>
+                <div class="text-content">
+                    <p class="answer">저는 AI의 선을 위한 잠재력 때문에 후회하지 않습니다. 하지만 지금이 실험을 실행하여 AI를 이해하고, 정부가 규제를 부과하며, 군사 로봇의 사용을 금지하는 세계 조약을 맺어야 할 순간이라고 생각합니다. 저는 원자폭탄을 발명한 후 수소폭탄에 반대하는 캠페인을 벌인 Robert Oppenheimer를 떠올립니다. 세상을 바꾸었지만 세상이 자신의 통제를 벗어났음을 발견한 사람입니다. 우리가 돌이켜보면 이것이 인류가 이러한 것들을 더 발전시킬지, 그렇게 한다면 스스로를 보호하기 위해 무엇을 할지 결정해야 했던 일종의 전환점으로 보일 수 있습니다. 저는 모릅니다. 제 주요 메시지는 다음에 무슨 일이 일어날지에 대한 엄청난 불확실성이 있다는 것입니다. 이것들은 이해합니다. 그리고 이해하기 때문에 우리는 다음에 무슨 일이 일어날지 깊이 생각해야 합니다. 우리는 그저 모를 뿐입니다.</p>
+                </div>
+                
+            </div>
+
+            <aside class="sidebar-knowledge">
+                <span class="sidebar-label">관련 배경지식</span>
+                <div class="knowledge-item">
+                    <h4 class="knowledge-term">Robert Oppenheimer <span class="en">Robert Oppenheimer</span></h4>
+                    <p class="knowledge-desc">맨해튼 프로젝트를 이끈 '원자폭탄의 아버지'입니다. 원폭 개발에 성공한 후 그 파괴력에 충격을 받아 수소폭탄 개발에 반대하고 핵군축을 주장했습니다. Hinton은 자신의 처지를 Oppenheimer에 비유하며, 획기적인 기술을 만들었지만 그 결과에 대한 책임감과 우려를 느끼고 있습니다.</p>
+                </div>
+                <div class="knowledge-item">
+                    <h4 class="knowledge-term">AI 거버넌스 <span class="en">AI Governance</span></h4>
+                    <p class="knowledge-desc">AI의 개발과 사용을 규제하고 관리하는 정책, 법률, 국제 협약 체계입니다. Hinton은 생물무기금지조약(BWC)이나 핵확산금지조약(NPT)처럼 AI 무기에 대한 국제 조약이 필요하다고 주장합니다. 하지만 AI의 이중 용도 특성상 규제가 매우 어렵습니다.</p>
+                </div>
+            </aside>
+        </article>
+
+</main>
+
+{% include magazine/footer.html
+   quote="We're entering a period of great uncertainty where we're dealing with things we've never dealt with before. And normally the first time you deal with something totally novel, you get it wrong. And we can't afford to get it wrong with these things."
+   meta_text="60 Minutes · Oct 9, 2023" %}
