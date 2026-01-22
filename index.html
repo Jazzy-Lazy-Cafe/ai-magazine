@@ -83,9 +83,6 @@ title: Home
       <p class="post-description">{{ post.description }}</p>
       {% endif %}
       <p class="post-date">{{ post.date | date: "%B %d, %Y" }}</p>
-      {% if post.excerpt %}
-      <div class="post-excerpt">{{ post.excerpt }}</div>
-      {% endif %}
     </li>
   {% endfor %}
 </ul>
