@@ -1,0 +1,123 @@
+{
+  "metadata": {
+    "layout": "magazine",
+    "title": "Your Article Title Here",
+    "description": "Brief description of your article",
+    "date": "YYYY-MM-DD"
+  },
+  "hero": {
+    "type": "split",
+    "header": {
+      "logo_text": "Magazine",
+      "logo_highlight": "Name",
+      "episode_info": "Episode XX · Date"
+    },
+    "split": {
+      "label": "CATEGORY LABEL",
+      "title": "Your Main <span class='highlight'>Highlighted</span> Title",
+      "subtitle": "A subtitle describing what this article is about and why readers should care.",
+      "guest1": {
+        "initials": "AB",
+        "name": "Guest Name 1",
+        "role": "Role / Title"
+      },
+      "guest2": {
+        "initials": "CD",
+        "name": "Guest Name 2",
+        "role": "Role / Title"
+      },
+      "visual_text": "AI"
+    },
+    "fullscreen": {
+      "issue_tag": "Series Name · Episode XX",
+      "title": "Main Title",
+      "subtitle": "Subtitle description",
+      "quote_en": "Featured quote in English that captures the essence of the article.",
+      "quote_ko": "한국어 번역 또는 추가 설명"
+    }
+  },
+  "opening_insight": {
+    "label": "Key Insight",
+    "text": "A powerful quote or key insight that sets the tone for the article.",
+    "translation": "Optional Korean translation or additional context"
+  },
+  "sections": [
+    {
+      "number": "01",
+      "title": "First Section Title",
+      "question": "What question does this section answer?",
+      "answer": "Your answer content goes here. The first letter will be automatically styled as a drop cap. You can write multiple paragraphs of content to explain complex topics in detail.",
+      "layout": "normal",
+      "knowledge_items": [
+        {
+          "term_ko": "Term Name",
+          "term_en": "English Term",
+          "description": "Explanation of the term and why it's relevant to this section."
+        },
+        {
+          "term_ko": "Another Term",
+          "term_en": "Another Term",
+          "description": "Additional background information that helps readers understand the content."
+        }
+      ]
+    },
+    {
+      "number": "02",
+      "title": "Second Section Title",
+      "question": "Another important question?",
+      "answer": "More content here. The 'reverse' layout swaps the sidebar to the left side for visual variety.",
+      "layout": "reverse",
+      "knowledge_items": [
+        {
+          "term_ko": "Concept",
+          "term_en": "Concept",
+          "description": "Background explanation."
+        }
+      ]
+    },
+    {
+      "number": "03",
+      "title": "Full Width Section",
+      "question": "When should I use a full-width section?",
+      "answer": "Use full-width sections when you don't need sidebar content.",
+      "layout": "full-width",
+      "knowledge_items": []
+    }
+  ],
+  "highlights": [
+    {
+      "position": "after_section_3",
+      "label": "Important Point",
+      "text": "Use highlight boxes between sections to emphasize key quotes or insights."
+    }
+  ],
+  "statistics": {
+    "enabled": true,
+    "position": "after_section_3",
+    "stats": [
+      {
+        "number": "42",
+        "label": "Important Metric"
+      },
+      {
+        "number": "3×",
+        "label": "Growth Factor"
+      },
+      {
+        "number": "2026",
+        "label": "Target Year"
+      }
+    ]
+  },
+  "bonus_section": {
+    "enabled": true,
+    "title": "Bonus Section",
+    "question": "Any final thoughts?",
+    "answer": "Wrap up with a bonus section or concluding thoughts.",
+    "knowledge_items": []
+  },
+  "footer": {
+    "quote": "Optional closing quote that summarizes the article's message.",
+    "meta_text": "Publication Info · Episode XX · Date"
+  }
+}

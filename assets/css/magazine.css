@@ -219,6 +219,13 @@ body::before {
     overflow: hidden;
 }
 
+/* When inside magazine-grid, span full width */
+.magazine-grid .key-insight {
+    grid-column: 1 / -1;
+    margin: 2rem -4rem;
+    width: calc(100% + 8rem);
+}
+
 /* Bill & Sam style - full screen hero */
 .key-insight .podcast-title {
     font-family: var(--font-display);
@@ -556,6 +563,12 @@ body::before {
 
     .magazine-grid {
         padding: 2rem;
+    }
+
+    .magazine-grid .key-insight {
+        margin: 2rem -2rem;
+        width: calc(100% + 4rem);
+        padding: 4rem 2rem;
     }
 
     .article-section,

@@ -12,3 +12,6 @@ Gemfile.lock
 
 # OS
 .DS_Store
+/_posts/2026-01-20-my-article.html
+/_data/my-article.json
+/_data/example-article.json
