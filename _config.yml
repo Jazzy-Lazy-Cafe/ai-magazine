@@ -4,10 +4,45 @@ email: chicdevaugust@gmail.com
 description: Deep talks, easy vibes
 baseurl: "/ai-magazine"
 url: "https://jazzy-lazy-cafe.github.io"
+lang: ko
+locale: ko_KR
+
+# Author
+author:
+  name: Jazzy Lazy AI
+  email: chicdevaugust@gmail.com
+  twitter: # Add your Twitter handle if you have one
+
+# SEO settings
+twitter:
+  username: # Add your Twitter username
+  card: summary_large_image
+
+# Social
+social:
+  name: Jazzy Lazy AI
+  links:
+    - https://jazzy-lazy-cafe.github.io/ai-magazine
+
+# SEO plugins
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-feed
 
 # Build settings
 markdown: kramdown
 permalink: /:year/:month/:day/:title/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "magazine"
+      author: "Jazzy Lazy AI"
+      image: /ai-magazine/assets/images/default-og.png
 
 # Exclude files
 exclude:
@@ -15,3 +50,5 @@ exclude:
   - Gemfile.lock
   - node_modules
   - vendor
+  - .claude
+  - README.md

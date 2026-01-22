@@ -1,0 +1,108 @@
+<!-- SEO Meta Tags -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- Page Title -->
+{% if page.title %}
+  <title>{{ page.title }} | {{ site.title }}</title>
+{% else %}
+  <title>{{ site.title }} - {{ site.description }}</title>
+{% endif %}
+
+<!-- Meta Description -->
+{% if page.description %}
+  <meta name="description" content="{{ page.description }}">
+{% else %}
+  <meta name="description" content="{{ site.description }}">
+{% endif %}
+
+<!-- Keywords -->
+{% if page.keywords %}
+  <meta name="keywords" content="{{ page.keywords }}">
+{% else %}
+  <meta name="keywords" content="AI, 인공지능, 기술, 팟캐스트, 인터뷰, AGI, 초지능, 머신러닝, 딥러닝">
+{% endif %}
+
+<!-- Author -->
+<meta name="author" content="{{ site.author.name }}">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="{% if page.layout == 'magazine' %}article{% else %}website{% endif %}">
+<meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
+<meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+<meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:locale" content="{{ site.locale }}">
+
+{% if page.image %}
+  <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}{{ page.image }}">
+{% else %}
+  <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/assets/images/default-og.png">
+{% endif %}
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
+<meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+<meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+{% if page.image %}
+  <meta name="twitter:image" content="{{ site.url }}{{ site.baseurl }}{{ page.image }}">
+{% else %}
+  <meta name="twitter:image" content="{{ site.url }}{{ site.baseurl }}/assets/images/default-og.png">
+{% endif %}
+{% if site.twitter.username %}
+  <meta name="twitter:creator" content="@{{ site.twitter.username }}">
+{% endif %}
+
+<!-- Article specific meta tags -->
+{% if page.layout == 'magazine' %}
+  <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
+  <meta property="article:author" content="{{ site.author.name }}">
+  <meta property="article:section" content="AI Technology">
+  <meta property="article:tag" content="AI">
+  <meta property="article:tag" content="인공지능">
+{% endif %}
+
+<!-- Schema.org structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "{% if page.layout == 'magazine' %}Article{% else %}WebSite{% endif %}",
+  "headline": "{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}",
+  "description": "{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}",
+  "url": "{{ site.url }}{{ site.baseurl }}{{ page.url }}",
+  {% if page.layout == 'magazine' %}
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  "dateModified": "{{ page.date | date_to_xmlschema }}",
+  "author": {
+    "@type": "Organization",
+    "name": "{{ site.author.name }}"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ site.title }}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ site.url }}{{ site.baseurl }}/assets/images/logo.png"
+    }
+  },
+  {% endif %}
+  "image": "{% if page.image %}{{ site.url }}{{ site.baseurl }}{{ page.image }}{% else %}{{ site.url }}{{ site.baseurl }}/assets/images/default-og.png{% endif %}",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ site.url }}{{ site.baseurl }}{{ page.url }}"
+  }
+}
+</script>
+
+<!-- Additional robots meta -->
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="googlebot" content="index, follow">
+
+<!-- Language -->
+<meta property="og:locale" content="{{ site.locale }}">
+<meta http-equiv="content-language" content="{{ site.lang }}">

@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://jazzy-lazy-cafe.github.io/ai-magazine/sitemap.xml
+
+# Disallow admin and config files
+Disallow: /.claude/
+Disallow: /Gemfile
+Disallow: /Gemfile.lock
