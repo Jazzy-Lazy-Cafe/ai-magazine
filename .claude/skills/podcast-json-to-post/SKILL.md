@@ -26,6 +26,8 @@ description: podcast-summary로 생성된 JSON 파일을 Jekyll 매거진 포스
 
 ## 변환 절차
 
+- 주의 : 이미 존재하는 파일이라면 기존 파일에 적힌 yyyy-MM-dd 를 **반드시** 그대로 따라야 합니다. 
+
 ### Step 1: JSON 파일 확인
 1. JSON 파일 위치 확인:
    ```
