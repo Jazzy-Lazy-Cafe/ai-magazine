@@ -80,10 +80,10 @@ body::before {
     color: var(--color-text-secondary);
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    max-width: 10ch;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    max-width: calc(100vw - 8rem);
 }
 
 /* Hero Section */
@@ -752,7 +752,7 @@ body::before {
 
     .episode-info {
         font-size: 0.65rem;
-        max-width: 10ch;
+        max-width: calc(100vw - 2rem);
     }
 
     .hero-content {
