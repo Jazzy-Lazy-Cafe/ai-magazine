@@ -88,6 +88,20 @@ def generate_highlight(highlight_data):
 """
 
 
+def generate_interview_context(context_data):
+    """Generate interview context/background section."""
+    if not context_data:
+        return ""
+
+    return f"""
+<!-- Interview Context -->
+<section class="interview-context fade-in">
+    <h3 class="context-title">{context_data['title']}</h3>
+    <p class="context-content">{context_data['content']}</p>
+</section>
+"""
+
+
 def generate_knowledge_items(items):
     """Generate knowledge sidebar items HTML."""
     if not items:
@@ -223,6 +237,10 @@ def convert_json_to_html(json_data):
     # Opening insight
     if json_data.get('opening_insight'):
         html += generate_highlight(json_data['opening_insight'])
+
+    # Interview context
+    if json_data.get('interview_context'):
+        html += generate_interview_context(json_data['interview_context'])
 
     # Main content grid
     html += "\n<!-- Main Content Grid -->\n<main class=\"magazine-grid\">\n"

@@ -5,19 +5,28 @@ description: Summarizes podcast transcript into a JSON format and outputs a Jeky
 ---
 
 1. 당신은 기술 팟캐스트 전문 요약가입니다. 주어진 팟캐스트 트랜스크립트를 아래 형식에 맞춰 한국어로 요약해주세요. 원문 링크가 있다면 방문해서 날짜와 제목, 대화 참여자에 대한 정보를 얻으세요. 
-2. 요약 결과는 .claude/skills/podcast-summary/magazine-template.json 형식대로 내용에 맞게 구조화 합니다. title 은 [인터뷰이 이름 : 대화주제]로 구성합니다. 인터뷰이 이름은 영문으로 작성합니다.  
-3. description 은 인터뷰이의 출신을 알 수 있도록 하고, 대화의 주제를 간단히 드러내줍니다. 
-4. 생성된 JSON 파일은 .claude/skills/podcast-summary/transcripts/json 폴더 밑에 둡니다. 만약 폴더가 없다면 만들어서 넣으세요.
-5. 요약이 완료된 후에는 .claude/skills/podcast-summary/json_to_magazine.py 스크립트를 사용해서 jekyll 포스트 형식의 html 파일을 만들어 냅니다.
-6. 원본 소스 링크가 제공되는 경우, hero.original_link 필드에 URL을 추가하세요. 이 링크는 hero 섹션에 "Visit Original Source" 버튼으로 표시됩니다. 
+2. title 은 [인터뷰이 이름 : 대화주제]로 구성합니다. 인터뷰이 이름은 영문으로 작성합니다.
+3. 요약 결과는 .claude/skills/podcast-summary/magazine-template.json 형식대로 내용에 맞게 구조화 합니다.
+4. description 은 인터뷰이의 출신을 알 수 있도록 하고, 대화의 주제를 간단히 드러내줍니다.
+5. **interview_context**: opening_insight 다음에 위치하며, 이 인터뷰가 왜 진행되었으며 무엇을 위해 성사되었는지에 대한 배경 정보를 2-3문장으로 작성합니다. 인터뷰이의 배경, 시기적 맥락, 주요 논의 주제 등을 포함합니다.
+6. 생성된 JSON 파일은 .claude/skills/podcast-summary/transcripts/json 폴더 밑에 둡니다. 만약 폴더가 없다면 만들어서 넣으세요.
+7. 요약이 완료된 후에는 .claude/skills/podcast-summary/json_to_magazine.py 스크립트를 사용해서 jekyll 포스트 형식의 html 파일을 만들어 냅니다.
+8. 원본 소스 링크가 제공되는 경우, hero.original_link 필드에 URL을 추가하세요. 이 링크는 hero 섹션에 "Visit Original Source" 버튼으로 표시됩니다. 
 
-## 요약 규칙 
+## 요약 규칙
 
-요약을 시작하기 전에 원문 링크를 방문하여 어떤 주체들이 참여하는 대화인지 정확히 파악합니다. 
-가장 상단에는 이 팟캐스트의 핵심 인사이트를 나타내주는 인터뷰 내용의 원문 1-2문장과, 이에 대한 한국어 번역을 보여줍니다.
-핵심 인사이트는 AI에 관심있는 독자들의 흥미를 끌 수 있으며, 이 아티클에 대한 호기심을 불러일으키는 것으로 구성합니다.
+요약을 시작하기 전에 원문 링크를 방문하여 어떤 주체들이 참여하는 대화인지 정확히 파악합니다.
 
-각 주제별로 다음 세 가지 섹션을 순서대로 작성합니다. 형식은 JSON 형식으로 작성합니다. 
+### 구조 개요
+
+1. **opening_insight**: 이 팟캐스트의 핵심 인사이트를 나타내주는 인터뷰 내용의 원문 1-2문장과 한국어 번역을 보여줍니다. AI에 관심있는 독자들의 흥미를 끌 수 있으며, 이 아티클에 대한 호기심을 불러일으키는 것으로 구성합니다.
+
+2. **interview_context**: 이 인터뷰가 왜 진행되었으며 무엇을 위해 성사되었는지 2-3문장으로 설명합니다.
+   - 인터뷰이는 누구인가? (직책, 주요 업적)
+   - 어떤 맥락에서 이 인터뷰가 이루어졌는가? (이벤트, 시기, 배경)
+   - 이 인터뷰의 주요 목적이나 초점은 무엇인가?
+
+3. **sections**: 각 주제별로 다음 세 가지 섹션을 순서대로 작성합니다. 형식은 JSON 형식으로 작성합니다. 
 
 ### [주제 제목]
 

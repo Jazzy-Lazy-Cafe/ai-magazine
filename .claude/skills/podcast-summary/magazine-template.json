@@ -42,6 +42,10 @@
     "text": "A powerful quote or key insight that sets the tone for the article.",
     "translation": "Optional Korean translation or additional context"
   },
+  "interview_context": {
+    "title": "인터뷰 배경",
+    "content": "이 인터뷰가 왜 진행되었으며, 무엇을 위해 성사되었는지에 대한 간략한 설명입니다. 인터뷰이의 배경, 시기적 맥락, 주요 논의 주제 등을 2-3문장으로 설명합니다."
+  },
   "sections": [
     {
       "number": "01",
