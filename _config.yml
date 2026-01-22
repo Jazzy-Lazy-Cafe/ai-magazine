@@ -56,3 +56,4 @@ exclude:
   - README.md
   - SEO-GUIDE.md
   - ANALYTICS-SETUP.md
+  - CLAUDE.md
