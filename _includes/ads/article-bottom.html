@@ -1,0 +1,14 @@
+{% if site.google_adsense.enabled %}
+<!-- Article Bottom Ad -->
+<div class="ad-container ad-article-bottom">
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="{{ site.google_adsense.client_id }}"
+       data-ad-slot="{{ site.google_adsense.slots.article_bottom }}"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+{% endif %}

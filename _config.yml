@@ -27,6 +27,16 @@ social:
 # Google Analytics 4
 google_analytics: G-KS2YMVNJLB
 
+# Google AdSense
+google_adsense:
+  enabled: false  # Set to true after getting approved by AdSense
+  client_id: ""   # Your AdSense client ID (e.g., ca-pub-1234567890123456)
+  slots:
+    article_top: ""     # Ad slot ID for top of article
+    in_article: ""      # Ad slot ID for in-article ads
+    article_bottom: ""  # Ad slot ID for bottom of article
+    sidebar: ""         # Ad slot ID for sidebar ads
+
 # Plugins
 plugins:
   - jekyll-seo-tag
@@ -56,4 +66,5 @@ exclude:
   - README.md
   - SEO-GUIDE.md
   - ANALYTICS-SETUP.md
+  - ADSENSE-SETUP.md
   - CLAUDE.md
