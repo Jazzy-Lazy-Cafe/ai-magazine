@@ -48,6 +48,8 @@
       "title": "First Section Title",
       "question": "What question does this section answer?",
       "answer": "Your answer content goes here. The first letter will be automatically styled as a drop cap. You can write multiple paragraphs of content to explain complex topics in detail.",
+      "follow_up_question": "Optional follow-up question for conversational flow?",
+      "follow_up_answer": "Optional answer to the follow-up question. This will be displayed separately below the main answer.",
       "layout": "normal",
       "knowledge_items": [
         {
@@ -114,6 +116,7 @@
     "enabled": true,
     "title": "Bonus Section",
     "question": "Any final thoughts?",
+    "follow_up_question": "Optional follow-up question?",
     "answer": "Wrap up with a bonus section or concluding thoughts.",
     "knowledge_items": []
   },

@@ -115,6 +115,13 @@ def generate_section(section):
     if section['layout'] == 'reverse':
         layout_class = " reverse"
 
+    # Handle optional follow-up question and answer
+    follow_up_html = ""
+    if section.get('follow_up_question'):
+        follow_up_html = f'<p class="follow-up-question">{section["follow_up_question"]}</p>'
+        if section.get('follow_up_answer'):
+            follow_up_html += f'\n                <div class="follow-up-content">\n                    <p class="follow-up-answer">{section["follow_up_answer"]}</p>\n                </div>'
+
     result = f"""
         <!-- SECTION {section['number']}: {section['title']} -->
         <article class="article-section{layout_class} fade-in">
@@ -125,6 +132,7 @@ def generate_section(section):
                 <div class="text-content">
                     <p class="answer">{section['answer']}</p>
                 </div>
+                {follow_up_html}
             </div>
 """
 
@@ -161,6 +169,13 @@ def generate_bonus_section(bonus_data):
     if not bonus_data.get('enabled'):
         return ""
 
+    # Handle optional follow-up question and answer
+    follow_up_html = ""
+    if bonus_data.get('follow_up_question'):
+        follow_up_html = f'<p class="follow-up-question">{bonus_data["follow_up_question"]}</p>'
+        if bonus_data.get('follow_up_answer'):
+            follow_up_html += f'\n                <div class="follow-up-content">\n                    <p class="follow-up-answer">{bonus_data["follow_up_answer"]}</p>\n                </div>'
+
     result = f"""
         <!-- BONUS SECTION -->
         <div class="section-divider">
@@ -177,6 +192,7 @@ def generate_bonus_section(bonus_data):
                 <div class="text-content single-column">
                     <p class="answer">{bonus_data['answer']}</p>
                 </div>
+                {follow_up_html}
             </div>
 """
 
