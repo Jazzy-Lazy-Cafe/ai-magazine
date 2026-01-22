@@ -7,6 +7,7 @@
   },
   "hero": {
     "type": "split",
+    "original_link": "https://example.com/original-source",
     "header": {
       "logo_text": "Magazine",
       "logo_highlight": "Name",

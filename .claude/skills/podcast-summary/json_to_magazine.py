@@ -36,6 +36,10 @@ def generate_hero_split(hero_data):
     header = hero_data['header']
     split = hero_data['split']
 
+    # Handle optional original_link
+    original_link = hero_data.get('original_link', '')
+    original_link_param = f'\n   original_link="{original_link}"' if original_link else ''
+
     result = f"""
 {{% include magazine/header.html
    logo_text="{header['logo_text']}"
@@ -52,7 +56,7 @@ def generate_hero_split(hero_data):
    guest2_initials="{split['guest2']['initials']}"
    guest2_name="{split['guest2']['name']}"
    guest2_role="{split['guest2']['role']}"
-   visual_text="{split['visual_text']}" %}}
+   visual_text="{split['visual_text']}"{original_link_param} %}}
 """
     return result
 
@@ -62,26 +66,12 @@ def generate_hero_fullscreen(hero_data):
     fs = hero_data['fullscreen']
 
     result = f"""
-<header class="key-insight">
-    <span class="issue-tag">{fs['issue_tag']}</span>
-    <h1 class="podcast-title">{fs['title']}</h1>
-    <p class="podcast-subtitle">{fs['subtitle']}</p>
-
-    <div class="quote-block">
-        <p class="quote-en">
-            {fs['quote_en']}
-        </p>
-        <p class="quote-ko">
-            {fs['quote_ko']}
-        </p>
-    </div>
-
-    <div class="scroll-indicator">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-        </svg>
-    </div>
-</header>
+{{% include magazine/hero-fullscreen.html
+   issue_tag="{fs['issue_tag']}"
+   title="{fs['title']}"
+   subtitle="{fs['subtitle']}"
+   quote_en="{fs['quote_en']}"
+   quote_ko="{fs['quote_ko']}" %}}
 """
     return result
 
@@ -211,11 +201,8 @@ def convert_json_to_html(json_data):
     """Convert JSON data to magazine HTML format."""
     html = generate_front_matter(json_data['metadata'])
 
-    # Hero section
-    if json_data['hero']['type'] == 'split':
-        html += generate_hero_split(json_data['hero'])
-    else:
-        html += generate_hero_fullscreen(json_data['hero'])
+    # Hero section - always use split
+    html += generate_hero_split(json_data['hero'])
 
     # Opening insight
     if json_data.get('opening_insight'):
