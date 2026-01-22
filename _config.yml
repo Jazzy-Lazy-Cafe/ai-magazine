@@ -24,6 +24,19 @@ social:
   links:
     - https://jazzy-lazy-cafe.github.io/ai-magazine
 
+# Google Analytics 4
+google_analytics: G-KS2YMVNJLB
+
+# 또는 Firebase Analytics 사용 (더 상세한 분석)
+# firebase:
+#   apiKey: "YOUR_API_KEY"
+#   authDomain: "YOUR_PROJECT_ID.firebaseapp.com"
+#   projectId: "YOUR_PROJECT_ID"
+#   storageBucket: "YOUR_PROJECT_ID.appspot.com"
+#   messagingSenderId: "YOUR_MESSAGING_SENDER_ID"
+#   appId: "YOUR_APP_ID"
+#   measurementId: "G-XXXXXXXXXX"
+
 # Plugins
 plugins:
   - jekyll-seo-tag
@@ -52,3 +65,4 @@ exclude:
   - .claude
   - README.md
   - SEO-GUIDE.md
+  - ANALYTICS-SETUP.md
