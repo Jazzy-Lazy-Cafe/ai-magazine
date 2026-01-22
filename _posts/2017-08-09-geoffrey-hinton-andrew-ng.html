@@ -1,0 +1,318 @@
+---
+layout: magazine
+title: "Geoffrey Hinton: 딥러닝의 대부가 전하는 AI의 과거와 미래"
+description: "토론토 대학교 교수이자 '딥러닝의 대부' Geoffrey Hinton이 Andrew Ng와 나눈 대화에서 역전파의 탄생부터 캡슐 네트워크까지, 50년간의 AI 여정과 미래 비전을 공유합니다."
+date: 2017-08-09
+---
+
+{% include magazine/header.html
+   logo_text="Deep"
+   logo_highlight="Learning.ai"
+   episode_info="August 9, 2017" %}
+
+{% include magazine/hero-split.html
+   label="AI LEGEND"
+   title="딥러닝의 <span class='highlight'>대부</span>가 말하는 AI 혁명"
+   subtitle="역전파 알고리즘의 공동 발명자 Geoffrey Hinton이 들려주는 50년간의 AI 여정, 그리고 아직 오지 않은 미래"
+   guest1_initials="GH"
+   guest1_name="Geoffrey Hinton"
+   guest1_role="Godfather of Deep Learning / University of Toronto"
+   guest2_initials="AN"
+   guest2_name="Andrew Ng"
+   guest2_role="Founder, deeplearning.ai / Stanford Professor"
+   visual_text="AI"
+   original_link="https://youtu.be/-eyhCTvrEtE" %}
+
+{% include magazine/highlight-box.html
+   label="Core Philosophy"
+   text="Either your intuitions are good or they're not. If your intuitions are good, you should follow them and you'll eventually be successful. If your intuitions are not good, it doesn't matter what you do. You might as well trust your intuitions."
+   translation="당신의 직관이 좋든 나쁘든, 그것을 믿는 수밖에 없습니다. 직관이 좋다면 결국 성공할 것이고, 나쁘다면 무엇을 하든 소용없기 때문입니다. 그러니 당신의 직관을 믿으세요." %}
+
+<!-- Interview Context -->
+<section class="interview-context fade-in">
+    <h3 class="context-title">인터뷰 배경</h3>
+    <p class="context-content">Geoffrey Hinton은 역전파 알고리즘의 공동 발명자이자 '딥러닝의 대부'로 불리는 토론토 대학교 교수입니다. 이 인터뷰는 2017년 8월 Andrew Ng의 deeplearning.ai를 통해 진행되었으며, Hinton의 50년 AI 연구 여정과 미래 비전을 깊이 있게 다룹니다. 홀로그램에 대한 고등학교 동급생의 말에서 시작된 뇌 연구에 대한 호기심부터, 현재 Google Brain에서 진행 중인 캡슐 네트워크 연구까지, AI 분야의 역사적 순간들과 아직 풀리지 않은 도전 과제들에 대해 논의합니다.</p>
+</section>
+
+<!-- Main Content Grid -->
+<main class="magazine-grid">
+
+        <!-- SECTION 01: 홀로그램에서 AI로 -->
+        <article class="article-section fade-in">
+            <div class="main-article">
+                <span class="section-number">01</span>
+                <h2 class="section-title">홀로그램에서 AI로</h2>
+                <p class="question">어떻게 AI와 신경망 연구를 시작하게 되었나요?</p>
+                <div class="text-content">
+                    <p class="answer">고등학교 시절 제보다 모든 면에서 뛰어났던 동급생이 어느 날 '뇌가 홀로그램을 사용한다는 것을 아냐?'라고 물었습니다. 1966년쯤이었죠. 홀로그램은 절반을 잘라내도 전체 그림을 볼 수 있는데, 뇌의 기억도 그렇게 전체에 분산되어 있을 수 있다는 것이었습니다. 그것이 뇌가 어떻게 기억을 저장하는지에 대한 제 관심의 시작이었습니다. 대학에서는 생리학과 물리학, 철학, 심리학을 거쳐 목수로 일하기도 했지만, 결국 AI를 선택했습니다. 에딘버러에서 박사 과정을 밟을 때 지도교수는 신경망을 포기하고 기호적 AI를 하라고 했지만, 저는 제가 믿는 것을 계속했습니다. 그리고 영국에서는 일자리를 구할 수 없었죠.</p>
+                </div>
+                
+            </div>
+
+            <aside class="sidebar-knowledge">
+                <span class="sidebar-label">관련 배경지식</span>
+                <div class="knowledge-item">
+                    <h4 class="knowledge-term">홀로그램 <span class="en">Hologram</span></h4>
+                    <p class="knowledge-desc">3차원 이미지를 기록하고 재생하는 기술입니다. 홀로그램의 일부분만으로도 전체 이미지를 복원할 수 있다는 특성이 뇌의 분산 기억 저장 방식과 유사하다고 여겨졌습니다.</p>
+                </div>
+                <div class="knowledge-item">
+                    <h4 class="knowledge-term">기호적 AI <span class="en">Symbolic AI</span></h4>
+                    <p class="knowledge-desc">논리와 규칙 기반으로 지식을 표현하고 추론하는 전통적인 AI 접근법입니다. 1950년대부터 1980년대까지 주류였으나, 현재는 신경망 기반의 딥러닝이 주류가 되었습니다.</p>
+                </div>
+            </aside>
+        </article>
+
+        <!-- SECTION 02: 캘리포니아의 돌파구 -->
+        <article class="article-section reverse fade-in">
+            <div class="main-article">
+                <span class="section-number">02</span>
+                <h2 class="section-title">캘리포니아의 돌파구</h2>
+                <p class="question">역전파 알고리즘은 어떻게 탄생했나요?</p>
+                <div class="text-content">
+                    <p class="answer">1980년대 초 캘리포니아에서 모든 것이 달라졌습니다. 영국에서는 신경망이 어리석은 것으로 여겨졌지만, UCSD의 Don Norman과 David Rumelhart는 매우 개방적이었습니다. 1982년 초, Rumelhart, Ron Williams, 그리고 저는 함께 역전파 알고리즘을 개발했습니다. 주로 David Rumelhart의 아이디어였죠. 나중에 Paul Werbos가 몇 년 전에 이미 발표했고, David Parker 등 다른 사람들도 발명했다는 것을 알게 되었습니다. 체인 룰을 사용해 미분값을 얻는 것 자체는 새로운 아이디어가 아니었습니다. 하지만 우리는 1986년 Nature에 논문을 실었고, 저는 그것을 받아들이게 하기 위해 상당한 정치적 노력을 기울였습니다.</p>
+                </div>
+                <p class="follow-up-question">왜 당신들의 논문이 커뮤니티에 성공적으로 받아들여졌나요?</p>
+                <div class="follow-up-content">
+                    <p class="follow-up-answer">심사자 중 한 명이 영국의 유명한 심리학자 Stuart Sutherland일 것이라고 생각하고, 그와 오랜 시간 대화하며 설명했습니다. 그는 역전파가 단어의 표현을 학습할 수 있다는 것에 깊은 인상을 받았습니다. 우리는 가계도에 대한 단어 세 쌍으로 훈련시켰습니다. 예를 들어 'Mary has mother Victoria' 같은 것이죠. 처음 두 단어를 주면 마지막 단어를 예측해야 했습니다. 훈련 후 표현을 보면 국적, 세대, 가계도의 어느 가지에 속하는지 같은 특징들을 볼 수 있었습니다. 이것은 매우 초기의 단어 임베딩이었고, 이미 학습 알고리즘으로부터 의미론적 특징들이 나타나고 있었습니다.</p>
+                </div>
+            </div>
+
+            <aside class="sidebar-knowledge">
+                <span class="sidebar-label">관련 배경지식</span>
+                <div class="knowledge-item">
+                    <h4 class="knowledge-term">역전파 <span class="en">Backpropagation</span></h4>
+                    <p class="knowledge-desc">신경망 학습의 핵심 알고리즘으로, 출력의 오차를 역방향으로 전파하여 각 가중치를 업데이트합니다. 체인 룰을 사용해 효율적으로 기울기를 계산합니다.</p>
+                </div>
+                <div class="knowledge-item">
+                    <h4 class="knowledge-term">단어 임베딩 <span class="en">Word Embeddings</span></h4>
+                    <p class="knowledge-desc">단어를 고차원 벡터 공간의 점으로 표현하는 방법입니다. 의미가 유사한 단어는 벡터 공간에서 가까이 위치하게 됩니다. Word2Vec, GloVe 등이 대표적입니다.</p>
+                </div>
+            </aside>
+        </article>
+
+        <!-- SECTION 03: 가장 아름다운 발명 -->
+        <article class="article-section fade-in">
+            <div class="main-article">
+                <span class="section-number">03</span>
+                <h2 class="section-title">가장 아름다운 발명</h2>
+                <p class="question">당신이 발명한 것들 중 가장 아름답다고 생각하는 것은 무엇인가요?</p>
+                <div class="text-content">
+                    <p class="answer">Terrence Sejnowski와 함께한 볼츠만 머신이 가장 아름답다고 생각합니다. 우리는 대규모로 조밀하게 연결된 네트워크에서 노드 일부만 볼 수 있을 때, 은닉 표현을 학습할 수 있는 정말 단순한 학습 알고리즘을 발견했습니다. 매우 단순하면서도 뇌에서 구현될 수 있을 것 같았습니다. 각 시냅스는 직접 연결된 두 뉴런의 행동만 알면 되었고, 전파되는 정보는 깨어 있을 때와 잠들었을 때 두 단계에서 동일했습니다. 역전파에서는 순방향 패스와 역방향 패스가 다르게 작동하는 것과 대조적이죠. 오랫동안 너무 느려 보여서 호기심거리로만 보였지만, 나중에 약간의 아름다움을 희생하고 제한된 볼츠만 머신을 만들었습니다. Netflix 경진대회에서 우승 엔트리의 재료 중 하나였습니다.</p>
+                </div>
+                
+            </div>
+
+            <aside class="sidebar-knowledge">
+                <span class="sidebar-label">관련 배경지식</span>
+                <div class="knowledge-item">
+                    <h4 class="knowledge-term">볼츠만 머신 <span class="en">Boltzmann Machine</span></h4>
+                    <p class="knowledge-desc">확률적 신경망의 한 종류로, 모든 유닛이 서로 연결된 대칭적 네트워크입니다. 열역학의 볼츠만 분포에서 영감을 받았으며, 은닉 표현을 학습할 수 있습니다.</p>
+                </div>
+            </aside>
+        </article>
+
+        <!-- SECTION 04: ReLU와 놓친 기회 -->
+        <article class="article-section fade-in">
+            <div class="main-article">
+                <span class="section-number">04</span>
+                <h2 class="section-title">ReLU와 놓친 기회</h2>
+                <p class="question">ReLU 활성화 함수는 어떻게 개발되었나요?</p>
+                <div class="text-content">
+                    <p class="answer">다른 사람들도 ReLU에 대해 생각했었습니다. 우리는 제한된 볼츠만 머신으로 작업하면서 ReLU가 로지스틱 유닛의 전체 스택과 거의 정확히 동등하다는 것을 보여주었습니다. 그것이 ReLU가 널리 퍼지는 데 도움이 되었습니다. 저는 ReLU와 로지스틱 유닛에 대해 알고 있었고, 볼츠만 머신 작업 때문에 모든 기본 작업이 로지스틱 유닛으로 이루어졌습니다. 질문은 학습 알고리즘이 ReLU가 있는 것에서도 작동할 수 있는가였습니다. ReLU가 로지스틱 유닛의 스택과 거의 정확히 동등하다는 것을 보여줌으로써, 모든 수학이 통할 것임을 보였습니다. 오늘날 많은 사람들이 ReLU를 사용하고 동일한 동기를 반드시 이해할 필요 없이 작동합니다.</p>
+                </div>
+                <p class="follow-up-question">Residual Networks에 대해 놓친 기회가 있었나요?</p>
+                <div class="follow-up-content">
+                    <p class="follow-up-answer">2014년에 Google에서 ReLU와 항등 행렬로 초기화하는 것에 대해 강연을 했습니다. ReLU의 좋은 점은 은닉층을 계속 복제하고 항등 행렬로 초기화하면, 아래 층의 패턴을 그대로 복사한다는 것입니다. 300개의 은닉층을 가진 네트워크를 훈련할 수 있었고, 항등 행렬로 초기화하면 정말 효율적으로 훈련할 수 있었습니다. 하지만 그것을 더 추구하지 않았고, 정말 후회합니다. Quoc Le와 함께 순환 신경망을 그렇게 초기화할 수 있다는 논문 하나를 발표했지만, 더 추구했어야 했습니다. 나중에 residual network들이 정말 그런 종류의 것이었기 때문입니다.</p>
+                </div>
+            </div>
+
+            <aside class="sidebar-knowledge">
+                <span class="sidebar-label">관련 배경지식</span>
+                <div class="knowledge-item">
+                    <h4 class="knowledge-term">ReLU <span class="en">Rectified Linear Unit</span></h4>
+                    <p class="knowledge-desc">f(x) = max(0, x)로 정의되는 활성화 함수입니다. 계산이 간단하고 기울기 소실 문제를 완화하여 딥러닝 혁명의 핵심 요소 중 하나가 되었습니다.</p>
+                </div>
+                <div class="knowledge-item">
+                    <h4 class="knowledge-term">Residual Networks <span class="en">ResNet</span></h4>
+                    <p class="knowledge-desc">2015년 He et al.이 제안한 구조로, skip connection을 통해 매우 깊은 네트워크 학습을 가능하게 했습니다. 152층 이상의 깊은 네트워크를 효과적으로 훈련할 수 있게 되었습니다.</p>
+                </div>
+            </aside>
+        </article>
+
+        <!-- SECTION 05: 뇌와 역전파 -->
+        <article class="article-section reverse fade-in">
+            <div class="main-article">
+                <span class="section-number">05</span>
+                <h2 class="section-title">뇌와 역전파</h2>
+                <p class="question">역전파와 뇌의 관계에 대한 현재 생각은 무엇인가요?</p>
+                <div class="text-content">
+                    <p class="answer">현재 그것에 대한 논문을 작업 중입니다. 제 주요 생각은 이것입니다: 역전파가 학습에 정말 좋은 알고리즘이라면, 진화는 분명히 그것을 구현하는 방법을 알아냈을 것입니다. 세포가 안구나 치아로 변할 수 있다면, 분명히 역전파를 구현할 수 있습니다. 아마도 엄청난 선택 압력이 있었을 것입니다. 신경과학자들이 그럴듯해 보이지 않는다고 생각하는 것은 어리석다고 생각합니다. 어떤 미묘한 구현이 있을 수 있고, 뇌는 정확히 역전파는 아니지만 그것에 꽤 가까운 무언가를 가지고 있을 것이라고 생각합니다.</p>
+                </div>
+                
+            </div>
+
+            <aside class="sidebar-knowledge">
+                <span class="sidebar-label">관련 배경지식</span>
+                <div class="knowledge-item">
+                    <h4 class="knowledge-term">생물학적 타당성 <span class="en">Biological Plausibility</span></h4>
+                    <p class="knowledge-desc">AI 알고리즘이 실제 뇌에서 구현될 수 있는지에 대한 개념입니다. 역전파는 오랫동안 생물학적으로 타당하지 않다고 여겨졌으나, 최근 연구들은 뇌가 유사한 메커니즘을 사용할 수 있음을 시사합니다.</p>
+                </div>
+            </aside>
+        </article>
+
+{% include magazine/highlight-box.html
+   label="Research Philosophy"
+   text="When you have what you think is a good idea and other people think it's complete rubbish, that's the sign of a really good idea. Unless you're wrong!" %}
+
+        <!-- SECTION 06: Fast Weights와 다중 시간 척도 -->
+        <article class="article-section fade-in">
+            <div class="main-article">
+                <span class="section-number">06</span>
+                <h2 class="section-title">Fast Weights와 다중 시간 척도</h2>
+                <p class="question">딥러닝에서 다중 시간 척도를 어떻게 다루나요?</p>
+                <div class="text-content">
+                    <p class="answer">그것은 제 대학원 1년차로 거슬러 올라갑니다. 제가 처음 한 강연은 Fast Weights라고 부른 것에 대한 것이었습니다 - 빠르게 적응하지만 빠르게 감소하여 단기 기억을 유지할 수 있는 가중치입니다. 1973년에 매우 단순한 시스템에서 그 가중치로 진정한 재귀를 할 수 있다는 것을 보여주었습니다. 진정한 재귀란 사물을 표현하는 데 사용되는 뉴런이 재귀 호출에서 사물을 표현하는 데 재사용되고, 지식을 표현하는 데 사용되는 가중치가 재귀 호출에서 재사용된다는 것을 의미합니다. 재귀 호출에서 빠져나올 때 무엇을 하고 있었는지 어떻게 기억할까요? 그 기억을 fast weights에 넣을 수 있고 그 fast weights로부터 뉴런의 활동 상태를 복구할 수 있습니다. 최근 2015/2016년에 Jimmy Ba와 함께 그런 재귀에 fast weights를 사용하는 것에 대한 논문을 NIPS에 발표했습니다.</p>
+                </div>
+                
+            </div>
+
+            <aside class="sidebar-knowledge">
+                <span class="sidebar-label">관련 배경지식</span>
+                <div class="knowledge-item">
+                    <h4 class="knowledge-term">Fast Weights <span class="en">Fast Weights</span></h4>
+                    <p class="knowledge-desc">빠르게 변하고 빠르게 감쇠하는 가중치로, 단기 기억을 모델링하는 데 사용됩니다. 느리게 변하는 일반 가중치와 함께 사용되어 다중 시간 척도를 처리할 수 있습니다.</p>
+                </div>
+            </aside>
+        </article>
+
+        <!-- SECTION 07: 캡슐: 현재의 열정 -->
+        <article class="article-section reverse fade-in">
+            <div class="main-article">
+                <span class="section-number">07</span>
+                <h2 class="section-title">캡슐: 현재의 열정</h2>
+                <p class="question">캡슐 네트워크는 무엇이며 왜 중요한가요?</p>
+                <div class="text-content">
+                    <p class="answer">저는 제가 익숙한 상태로 돌아왔습니다 - 제가 정말 믿는 아이디어를 가지고 있지만 다른 사람은 아무도 믿지 않고, 그것에 대한 논문을 제출하면 모두 거부당하는 상태입니다. 하지만 저는 정말로 이 아이디어를 믿고 계속 밀어붙일 것입니다. 핵심 아이디어는 다차원 엔티티를 작은 활동 벡터로 표현할 수 있다는 것입니다. 이미지의 각 영역에서 특정 종류의 특징이 기껏해야 하나만 있을 것이라고 가정합니다. 그러면 여러 뉴런을 사용하고 그들의 활동이 그 특징의 다양한 측면을 나타낼 것입니다: 정확한 X와 Y 좌표, 방향, 속도, 색상, 밝기 등. 하나만 있다면 같은 것의 다른 차원을 표현하기 위해 많은 뉴런을 사용할 수 있습니다.</p>
+                </div>
+                <p class="follow-up-question">캡슐의 주요 이점은 무엇인가요?</p>
+                <div class="follow-up-content">
+                    <p class="follow-up-answer">그것을 가지고 있으면 일반 신경망이 매우 서투른 것을 할 수 있습니다 - 제가 합의에 의한 라우팅이라고 부르는 것입니다. 예를 들어 세그멘테이션을 하고 싶고 입일 수 있는 것과 코일 수 있는 것이 있다면, 그것들을 함께 묶어 하나를 만들어야 하는지 알고 싶습니다. 입의 매개변수를 가진 캡슐과 코의 매개변수를 가진 캡슐이 있습니다. 함께 묶을지 결정하기 위해 각각이 얼굴의 매개변수가 무엇이어야 하는지에 대해 투표하도록 합니다. 입과 코가 올바른 공간 관계에 있다면 합의할 것입니다. 고차원 공간에서 합의는 매우 일어나기 어렵기 때문에, 한 레벨의 두 캡슐이 다음 레벨의 동일한 매개변수 세트에 투표할 때 그들이 아마도 옳다고 가정할 수 있습니다. 이것은 우리가 신경망에서 일반적으로 사용하는 것과는 매우 다른 필터링 방식입니다.</p>
+                </div>
+            </div>
+
+            <aside class="sidebar-knowledge">
+                <span class="sidebar-label">관련 배경지식</span>
+                <div class="knowledge-item">
+                    <h4 class="knowledge-term">캡슐 네트워크 <span class="en">Capsule Networks</span></h4>
+                    <p class="knowledge-desc">Hinton이 제안한 새로운 신경망 구조로, 각 캡슐이 엔티티의 여러 속성을 벡터로 표현합니다. 합의에 의한 라우팅을 통해 부분-전체 관계를 효과적으로 모델링할 수 있습니다.</p>
+                </div>
+                <div class="knowledge-item">
+                    <h4 class="knowledge-term">합의에 의한 라우팅 <span class="en">Routing by Agreement</span></h4>
+                    <p class="knowledge-desc">캡슐 네트워크에서 하위 레벨 캡슐들이 상위 레벨 캡슐의 매개변수에 투표하고, 고차원 공간에서의 합의를 통해 부분들이 전체를 구성하는지 판단하는 메커니즘입니다.</p>
+                </div>
+            </aside>
+        </article>
+
+        <!-- SECTION 08: 지도 학습 vs 비지도 학습 -->
+        <article class="article-section fade-in">
+            <div class="main-article">
+                <span class="section-number">08</span>
+                <h2 class="section-title">지도 학습 vs 비지도 학습</h2>
+                <p class="question">비지도 학습에 대한 당신의 생각이 어떻게 변화했나요?</p>
+                <div class="text-content">
+                    <p class="answer">제 지적 역사의 많은 부분이 역전파에 관한 것이었습니다 - 그것을 어떻게 사용하고 그 힘을 어떻게 활용할 것인가. 1980년대 중반에는 판별 학습에 사용하고 잘 작동했습니다. 1990년대 초에는 대부분의 인간 학습이 비지도 학습일 것이라고 결정했습니다. 그래서 비지도 학습에 훨씬 더 관심을 가졌습니다. 그때 Wake-Sleep 알고리즘 같은 것들을 연구했죠. 장기적으로 비지도 학습이 절대적으로 중요할 것이라고 생각합니다. 하지만 현실을 직시해야 합니다. 지난 10년 정도 동안 효과가 있었던 것은 지도 학습입니다 - 레이블이 있거나 시리즈의 다음 것을 예측하려는 판별 훈련입니다. 그것은 놀랍도록 잘 작동했습니다. 저는 여전히 비지도 학습이 중요할 것이며, 그것을 제대로 작동시키면 지금보다 훨씬 더 잘 작동할 것이라고 믿습니다. 하지만 아직 그렇게 하지 못했습니다.</p>
+                </div>
+                
+            </div>
+
+            <aside class="sidebar-knowledge">
+                <span class="sidebar-label">관련 배경지식</span>
+                <div class="knowledge-item">
+                    <h4 class="knowledge-term">비지도 학습 <span class="en">Unsupervised Learning</span></h4>
+                    <p class="knowledge-desc">레이블이 없는 데이터로부터 패턴을 학습하는 방법입니다. 군집화, 차원 축소, 생성 모델 등이 포함되며, 인간의 학습 방식에 더 가깝다고 여겨집니다.</p>
+                </div>
+                <div class="knowledge-item">
+                    <h4 class="knowledge-term">Wake-Sleep 알고리즘 <span class="en">Wake-Sleep Algorithm</span></h4>
+                    <p class="knowledge-desc">1995년 Hinton et al.이 제안한 비지도 학습 알고리즘으로, wake phase에서는 인식 가중치를 학습하고 sleep phase에서는 생성 가중치를 학습합니다.</p>
+                </div>
+            </aside>
+        </article>
+
+        <!-- SECTION 09: 연구 조언: 직관을 믿어라 -->
+        <article class="article-section fade-in">
+            <div class="main-article">
+                <span class="section-number">09</span>
+                <h2 class="section-title">연구 조언: 직관을 믿어라</h2>
+                <p class="question">딥러닝에 입문하려는 사람들에게 어떤 조언을 하시겠습니까?</p>
+                <div class="text-content">
+                    <p class="answer">문헌을 읽되, 너무 많이 읽지 마세요. 이것은 제 지도교수로부터 받은 조언으로, 대부분의 사람들이 말하는 것과는 매우 다릅니다. 대부분의 사람들은 몇 년 동안 문헌을 읽은 다음 자신의 아이디어를 연구하기 시작해야 한다고 말합니다. 그것이 일부 연구자들에게는 맞을 수 있지만, 창의적인 연구자들에게는: 문헌을 조금 읽고, 모두가 잘못하고 있다고 생각하는 것을 발견하고 - 그런 의미에서 반대 입장을 취하세요. 그것이 옳지 않게 느껴집니다. 그것을 올바르게 하는 방법을 알아내세요. 사람들이 '그건 좋지 않아'라고 말할 때 - 계속 밀고 나가세요. 저는 사람들이 계속하도록 돕는 아주 좋은 원칙을 가지고 있습니다: 당신의 직관이 좋든 나쁘든, 당신의 직관을 믿는 것이 낫습니다. 직관이 좋다면 결국 성공할 것이고, 나쁘다면 무엇을 하든 상관없기 때문입니다.</p>
+                </div>
+                
+            </div>
+
+            <aside class="sidebar-knowledge">
+                <span class="sidebar-label">관련 배경지식</span>
+                <div class="knowledge-item">
+                    <h4 class="knowledge-term">반대 입장 연구 <span class="en">Contrarian Research</span></h4>
+                    <p class="knowledge-desc">주류 의견에 반대되는 아이디어를 추구하는 연구 접근법입니다. Hinton의 신경망 연구가 대표적인 예로, 기호적 AI가 주류였던 시절에도 신경망을 고집했습니다.</p>
+                </div>
+            </aside>
+        </article>
+
+        <!-- SECTION 10: AI의 패러다임 전환 -->
+        <article class="article-section reverse fade-in">
+            <div class="main-article">
+                <span class="section-number">10</span>
+                <h2 class="section-title">AI의 패러다임 전환</h2>
+                <p class="question">AI의 패러다임이 어떻게 변화했나요?</p>
+                <div class="text-content">
+                    <p class="answer">1950년대 초기에는 Von Neumann과 Turing 같은 사람들이 기호적 AI를 믿지 않았습니다. 그들은 뇌에서 훨씬 더 영감을 받았죠. 불행히도 둘 다 너무 일찍 죽어서 그들의 목소리가 들리지 않았습니다. 그 후 AI 초기에는 사람들이 지능에 필요한 표현이 어떤 종류의 기호적 표현 - 정리된 논리와 같은 것이라고 완전히 확신했습니다. 가정은 지능의 본질이 추론이라는 것이었습니다. 지금 일어난 일은 완전히 다른 관점입니다: 생각이란 것은 단지 신경 활동의 거대한 벡터입니다. 기호적 표현이라는 생각과 대조되는 것이죠. 생각이 기호적 표현이어야 한다고 생각한 사람들은 큰 실수를 했다고 생각합니다. 들어오는 것이 단어 문자열이고 나가는 것이 단어 문자열이기 때문에, 그 사이에 있는 것도 단어 문자열이거나 그와 유사한 것이라고 생각했습니다. 하지만 그 사이에 있는 것은 단어 문자열과 전혀 다르다고 생각합니다.</p>
+                </div>
+                
+            </div>
+
+            <aside class="sidebar-knowledge">
+                <span class="sidebar-label">관련 배경지식</span>
+                <div class="knowledge-item">
+                    <h4 class="knowledge-term">벡터 표현 <span class="en">Vector Representations</span></h4>
+                    <p class="knowledge-desc">개념, 단어, 이미지 등을 고차원 벡터로 표현하는 방법입니다. 현대 딥러닝의 기반이 되며, 기호적 표현과 달리 연속적이고 분산된 표현을 제공합니다.</p>
+                </div>
+                <div class="knowledge-item">
+                    <h4 class="knowledge-term">분산 표현 <span class="en">Distributed Representation</span></h4>
+                    <p class="knowledge-desc">정보가 여러 뉴런에 분산되어 표현되는 방식입니다. 각 뉴런이 여러 개념에 참여하고, 각 개념이 여러 뉴런으로 표현됩니다. 로컬 표현보다 효율적이고 일반화가 잘됩니다.</p>
+                </div>
+            </aside>
+        </article>
+
+        <!-- BONUS SECTION -->
+        <div class="section-divider">
+            <span class="line"></span>
+            <span class="icon">✦</span>
+            <span class="line"></span>
+        </div>
+
+        <article class="article-section fade-in">
+            <div class="main-article">
+                <span class="section-number">+</span>
+                <h2 class="section-title">대학 vs 산업계</h2>
+                <p class="question">PhD 프로그램에 들어가는 것과 기업의 연구 그룹에 합류하는 것에 대해 어떻게 생각하시나요?</p>
+                <div class="text-content single-column">
+                    <p class="answer">복잡합니다. 지금 당장은 대학에서 모든 사람을 교육할 만큼 딥러닝 훈련을 받은 학자가 충분하지 않습니다. 교수진 대역폭이 없습니다. 하지만 그것은 일시적일 것이라고 생각합니다. 대부분의 학과는 일어나고 있는 혁명의 종류를 이해하는 데 매우 느립니다. 컴퓨터와의 관계가 변했습니다. 전에는 프로그래밍했지만, 이제는 보여주면 알아서 파악합니다. 그것은 완전히 다른 컴퓨터 사용 방식입니다. 컴퓨터 과학과는 컴퓨터 프로그래밍이라는 아이디어를 중심으로 구축되었고, '보여주기'가 컴퓨터 프로그래밍만큼 클 것이라는 것을 이해하지 못합니다. 학과의 절반이 컴퓨터를 보여주는 것으로 일을 하는 사람들이어야 한다는 것을 이해하지 못합니다. 제 학과조차 그것을 인정하기를 거부합니다. 그런 상황에서는 대기업들이 훈련의 상당 부분을 해야 합니다. Google은 이제 Brain Resident라고 부르는 사람들을 훈련시키고 있습니다. 대학들이 결국 따라잡을 것이라고 생각합니다.</p>
+                </div>
+                
+            </div>
+
+            <aside class="sidebar-knowledge">
+                <span class="sidebar-label">관련 배경지식</span>
+                <div class="knowledge-item">
+                    <h4 class="knowledge-term">Brain Residency <span class="en">Brain Residency Program</span></h4>
+                    <p class="knowledge-desc">Google Brain이 운영하는 1년 프로그램으로, 딥러닝 연구 경험이 적은 사람들에게 실무 연구 경험을 제공합니다. 의사 레지던시 프로그램에서 영감을 받았습니다.</p>
+                </div>
+            </aside>
+        </article>
+
+</main>
+
+{% include magazine/footer.html
+   quote="I think thoughts are just these great big vectors and the big vectors have causal powers - they cause other big vectors. That's utterly unlike the standard AI view that thoughts are symbolic expressions."
+   meta_text="deeplearning.ai · Interview with Geoffrey Hinton · August 9, 2017" %}
