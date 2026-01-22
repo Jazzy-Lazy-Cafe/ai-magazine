@@ -3,4 +3,7 @@
     <p class="footer-quote">{{ include.quote }}</p>
     {% endif %}
     <p class="footer-meta">{{ include.meta_text }}</p>
+    <p class="footer-rss">
+        <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+    </p>
 </footer>

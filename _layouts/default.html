@@ -224,6 +224,11 @@
 
   <footer>
     <p>{{ site.title }} &mdash; {{ site.description }}</p>
+    <p style="margin-top: 15px; font-size: 0.75rem;">
+      <a href="{{ '/feed.xml' | relative_url }}" style="color: #a89f8d; text-decoration: none; border-bottom: 1px solid transparent; transition: all 0.3s;"
+         onmouseover="this.style.color='#d4a574'; this.style.borderBottomColor='#d4a574'"
+         onmouseout="this.style.color='#a89f8d'; this.style.borderBottomColor='transparent'">RSS</a>
+    </p>
   </footer>
 
   {% include google-analytics.html %}
