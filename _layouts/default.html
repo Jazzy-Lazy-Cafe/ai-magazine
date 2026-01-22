@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }} - {{ site.title }}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Libre Baskerville', Georgia, serif;
+      line-height: 1.8;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      color: #1a1a1a;
+      background: linear-gradient(to bottom, #f5f5f5 0%, #fafafa 50%, #ffffff 100%);
+      min-height: 100vh;
+      position: relative;
+    }
+
+    /* Spotlight effect from top */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 70vh;
+      background: radial-gradient(
+        ellipse 80% 60% at 50% 0%,
+        rgba(255, 235, 180, 0.6) 0%,
+        rgba(255, 245, 220, 0.4) 30%,
+        rgba(255, 250, 240, 0.2) 50%,
+        transparent 70%
+      );
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0;
+      animation: spotlight-on 2s ease-out 0.3s forwards;
+    }
+
+    @keyframes spotlight-on {
+      0% {
+        opacity: 0;
+        transform: scaleY(0.5);
+      }
+      100% {
+        opacity: 1;
+        transform: scaleY(1);
+      }
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 0 40px;
+      margin-bottom: 60px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Secondary spotlight - concentrated on header */
+    header::before {
+      content: '';
+      position: absolute;
+      top: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 500px;
+      height: 350px;
+      background: radial-gradient(
+        ellipse 70% 60% at 50% 0%,
+        rgba(255, 245, 200, 0.8) 0%,
+        rgba(255, 250, 230, 0.5) 40%,
+        rgba(255, 252, 240, 0.2) 60%,
+        transparent 80%
+      );
+      pointer-events: none;
+      z-index: -1;
+      opacity: 0;
+      animation: header-spotlight 2.5s ease-out 0.6s forwards;
+    }
+
+    @keyframes header-spotlight {
+      0% {
+        opacity: 0;
+        transform: translateX(-50%) scaleY(0.3);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(-50%) scaleY(1);
+      }
+    }
+
+    header::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 2px;
+      background-color: #1a1a1a;
+      margin: 30px auto 0;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 900;
+      font-style: italic;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 15px;
+    }
+
+    h1 a {
+      text-decoration: none;
+      color: #1a1a1a;
+      transition: opacity 0.2s;
+    }
+
+    h1 a:hover {
+      opacity: 0.7;
+    }
+
+    .tagline {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 0.85rem;
+      font-style: italic;
+      color: #666;
+      letter-spacing: 0.05em;
+      margin-top: 10px;
+    }
+
+    .since {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #999;
+      margin-top: 15px;
+    }
+
+    nav {
+      text-align: center;
+      margin: 30px 0 0;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #1a1a1a;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+
+    nav a:hover {
+      border-bottom-color: #1a1a1a;
+    }
+
+    main {
+      max-width: 700px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    footer {
+      margin-top: 80px;
+      padding-top: 40px;
+      text-align: center;
+      border-top: 1px solid #e0e0e0;
+      color: #999;
+      font-size: 0.8rem;
+      font-style: italic;
+      position: relative;
+      z-index: 1;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 20px 15px;
+      }
+
+      header {
+        padding: 40px 0 30px;
+        margin-bottom: 40px;
+      }
+
+      nav a {
+        margin: 0 10px;
+        font-size: 0.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1><a href="{{ site.baseurl }}/">{{ site.title }}</a></h1>
+    <p class="tagline">{{ site.description }}</p>
+    <p class="since">Since 2026</p>
+    <nav>
+      <a href="{{ site.baseurl }}/">Home</a>
+    </nav>
+  </header>
+
+  <main>
+    {{ content }}
+  </main>
+
+  <footer>
+    <p>{{ site.title }} &mdash; {{ site.description }}</p>
+  </footer>
+</body>
+</html>
