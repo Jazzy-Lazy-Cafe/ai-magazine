@@ -1,0 +1,9 @@
+<section class="key-insight">
+    <div class="insight-content">
+        <span class="insight-label">{{ include.label }}</span>
+        <blockquote class="insight-quote">{{ include.text }}</blockquote>
+        {% if include.translation %}
+        <p class="insight-translation">{{ include.translation }}</p>
+        {% endif %}
+    </div>
+</section>

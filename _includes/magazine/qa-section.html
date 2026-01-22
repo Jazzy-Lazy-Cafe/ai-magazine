@@ -1,0 +1,22 @@
+<article class="article-section {% if include.reversed %}reverse{% endif %} fade-in">
+    <div class="main-article">
+        <span class="section-number">{{ include.section_number }}</span>
+        <h2 class="section-title">{{ include.title }}</h2>
+        <p class="question">{{ include.question }}</p>
+        <div class="text-content">
+            <p class="answer">{{ include.answer }}</p>
+        </div>
+    </div>
+
+    {% if include.knowledge_items %}
+    <aside class="sidebar-knowledge">
+        <span class="sidebar-label">관련 배경지식</span>
+        {% for item in include.knowledge_items %}
+        <div class="knowledge-item">
+            <h4 class="knowledge-term">{{ item.term_ko }} <span class="en">{{ item.term_en }}</span></h4>
+            <p class="knowledge-desc">{{ item.description }}</p>
+        </div>
+        {% endfor %}
+    </aside>
+    {% endif %}
+</article>

@@ -1,0 +1,26 @@
+<section class="hero">
+    <div class="hero-content">
+        <span class="hero-label">{{ include.label }}</span>
+        <h1 class="hero-title">{{ include.title }}</h1>
+        <p class="hero-subtitle">{{ include.subtitle }}</p>
+        <div class="guests">
+            <div class="guest">
+                <div class="guest-avatar">{{ include.guest1_initials }}</div>
+                <div class="guest-info">
+                    <h4>{{ include.guest1_name }}</h4>
+                    <p>{{ include.guest1_role }}</p>
+                </div>
+            </div>
+            <div class="guest">
+                <div class="guest-avatar">{{ include.guest2_initials }}</div>
+                <div class="guest-info">
+                    <h4>{{ include.guest2_name }}</h4>
+                    <p>{{ include.guest2_role }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hero-visual">
+        <div class="visual-text">{{ include.visual_text }}</div>
+    </div>
+</section>

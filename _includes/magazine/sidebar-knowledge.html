@@ -1,0 +1,9 @@
+<aside class="sidebar-knowledge">
+    <span class="sidebar-label">관련 배경지식</span>
+    {% for item in include.items %}
+    <div class="knowledge-item">
+        <h4 class="knowledge-term">{{ item.term_ko }} <span class="en">{{ item.term_en }}</span></h4>
+        <p class="knowledge-desc">{{ item.description }}</p>
+    </div>
+    {% endfor %}
+</aside>
