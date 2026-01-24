@@ -9,11 +9,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Noto+Sans+KR:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ '/assets/css/magazine.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/language-toggle.css' | relative_url }}">
     {% include adsense.html %}
 </head>
 <body>
     {{ content }}
 
     {% include google-analytics.html %}
+    <script src="{{ '/assets/js/language-toggle.js' | relative_url }}"></script>
 </body>
 </html>

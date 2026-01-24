@@ -5,13 +5,7 @@ description: "NVIDIA CEO가 케임브리지 유니언에서 용기, 희생, 그�
 date: 2025-11-13
 ---
 
-<!-- Language Toggle -->
-<div class="language-toggle">
-    <button id="lang-toggle" class="lang-toggle-btn" aria-label="Toggle language">
-        <span class="lang-option lang-en">EN</span>
-        <span class="lang-option lang-ko active">KO</span>
-    </button>
-</div>
+{% include magazine/language-toggle.html %}
 
 {% include magazine/header.html
    logo_text="AI"
@@ -438,87 +432,3 @@ date: 2025-11-13
 {% include magazine/footer.html
    quote="호기심에는 경계가 없다. 발견은 지성에서만 나오는 게 아니라 확신과 낙관주의에서 나온다."
    meta_text="Cambridge Union · 2025 Professor Stephen Hawking Fellowship" %}
-
-<!-- Language Toggle Script -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const toggleBtn = document.getElementById('lang-toggle');
-    const langOptions = toggleBtn.querySelectorAll('.lang-option');
-    let currentLang = 'ko'; // Default language
-
-    toggleBtn.addEventListener('click', function() {
-        // Toggle language
-        currentLang = currentLang === 'ko' ? 'en' : 'ko';
-
-        // Update toggle button visual
-        langOptions.forEach(option => {
-            if (option.classList.contains(`lang-${currentLang}`)) {
-                option.classList.add('active');
-            } else {
-                option.classList.remove('active');
-            }
-        });
-
-        // Update all bilingual text elements
-        document.querySelectorAll('.bilingual-text').forEach(element => {
-            const text = element.getAttribute(`data-${currentLang}`);
-            if (text) {
-                element.textContent = text;
-            }
-        });
-
-        // Save preference
-        localStorage.setItem('preferredLanguage', currentLang);
-    });
-
-    // Load saved language preference
-    const savedLang = localStorage.getItem('preferredLanguage');
-    if (savedLang && savedLang !== currentLang) {
-        toggleBtn.click();
-    }
-});
-</script>
-
-<style>
-.language-toggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-}
-
-.lang-toggle-btn {
-    display: flex;
-    gap: 2px;
-    background: rgba(255, 255, 255, 0.95);
-    border: 2px solid #000;
-    border-radius: 20px;
-    padding: 4px;
-    cursor: pointer;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
-}
-
-.lang-toggle-btn:hover {
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-.lang-option {
-    padding: 6px 12px;
-    font-size: 12px;
-    font-weight: 600;
-    border-radius: 16px;
-    transition: all 0.3s ease;
-    color: #666;
-}
-
-.lang-option.active {
-    background: #000;
-    color: #fff;
-}
-
-/* Make bilingual text transition smoothly */
-.bilingual-text {
-    transition: opacity 0.2s ease;
-}
-</style>

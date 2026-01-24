@@ -1,0 +1,162 @@
+/**
+ * Language Toggle Component Styles
+ * Mobile-optimized bilingual language switcher
+ */
+
+.language-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.lang-toggle-btn {
+    display: flex;
+    gap: 2px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid #000;
+    border-radius: 20px;
+    padding: 4px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.lang-toggle-btn:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-1px);
+}
+
+.lang-toggle-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.lang-option {
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    color: #666;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.lang-option.active {
+    background: #000;
+    color: #fff;
+}
+
+/* Smooth text transition for bilingual elements */
+.bilingual-text {
+    transition: opacity 0.3s ease;
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+    .language-toggle {
+        top: 16px;
+        right: 16px;
+    }
+
+    .lang-toggle-btn {
+        padding: 3px;
+        border-width: 1.5px;
+        /* Larger tap target for mobile */
+        min-height: 36px;
+    }
+
+    .lang-option {
+        padding: 8px 14px;
+        font-size: 13px;
+        /* Ensure minimum tap target size (44x44px recommended by Apple) */
+        min-width: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Prevent button from overlapping with mobile navigation */
+    body.menu-open .language-toggle {
+        z-index: 999;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+    .language-toggle {
+        top: 12px;
+        right: 12px;
+    }
+
+    .lang-toggle-btn {
+        border-radius: 18px;
+        gap: 1px;
+    }
+
+    .lang-option {
+        padding: 7px 12px;
+        font-size: 12px;
+        border-radius: 14px;
+    }
+}
+
+/* Tablet landscape */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .language-toggle {
+        top: 24px;
+        right: 24px;
+    }
+}
+
+/* Accessibility: High contrast mode support */
+@media (prefers-contrast: high) {
+    .lang-toggle-btn {
+        border-width: 3px;
+    }
+
+    .lang-option.active {
+        background: #000;
+        border: 2px solid #fff;
+    }
+}
+
+/* Accessibility: Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .lang-toggle-btn,
+    .lang-option,
+    .bilingual-text {
+        transition: none;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .lang-toggle-btn {
+        background: rgba(0, 0, 0, 0.95);
+        border-color: #fff;
+        box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+    }
+
+    .lang-toggle-btn:hover {
+        box-shadow: 0 4px 12px rgba(255, 255, 255, 0.15);
+    }
+
+    .lang-option {
+        color: #999;
+    }
+
+    .lang-option.active {
+        background: #fff;
+        color: #000;
+    }
+}
+
+/* Print styles - hide toggle button when printing */
+@media print {
+    .language-toggle {
+        display: none;
+    }
+}

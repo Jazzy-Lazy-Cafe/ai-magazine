@@ -57,16 +57,8 @@ date: {metadata['date']}
 
 
 def generate_language_toggle():
-    """Generate language toggle button."""
-    return """
-<!-- Language Toggle -->
-<div class="language-toggle">
-    <button id="lang-toggle" class="lang-toggle-btn" aria-label="Toggle language">
-        <span class="lang-option lang-en">EN</span>
-        <span class="lang-option lang-ko active">KO</span>
-    </button>
-</div>
-"""
+    """Generate language toggle button using Jekyll include."""
+    return "{% include magazine/language-toggle.html %}"
 
 
 def generate_hero_split(hero_data):
@@ -309,92 +301,9 @@ def generate_footer(footer_data):
 
 
 def generate_language_toggle_script():
-    """Generate JavaScript for language toggle functionality."""
-    return """
-<!-- Language Toggle Script -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const toggleBtn = document.getElementById('lang-toggle');
-    const langOptions = toggleBtn.querySelectorAll('.lang-option');
-    let currentLang = 'ko'; // Default language
-
-    toggleBtn.addEventListener('click', function() {
-        // Toggle language
-        currentLang = currentLang === 'ko' ? 'en' : 'ko';
-
-        // Update toggle button visual
-        langOptions.forEach(option => {
-            if (option.classList.contains(`lang-${currentLang}`)) {
-                option.classList.add('active');
-            } else {
-                option.classList.remove('active');
-            }
-        });
-
-        // Update all bilingual text elements
-        document.querySelectorAll('.bilingual-text').forEach(element => {
-            const text = element.getAttribute(`data-${currentLang}`);
-            if (text) {
-                element.textContent = text;
-            }
-        });
-
-        // Save preference
-        localStorage.setItem('preferredLanguage', currentLang);
-    });
-
-    // Load saved language preference
-    const savedLang = localStorage.getItem('preferredLanguage');
-    if (savedLang && savedLang !== currentLang) {
-        toggleBtn.click();
-    }
-});
-</script>
-
-<style>
-.language-toggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-}
-
-.lang-toggle-btn {
-    display: flex;
-    gap: 2px;
-    background: rgba(255, 255, 255, 0.95);
-    border: 2px solid #000;
-    border-radius: 20px;
-    padding: 4px;
-    cursor: pointer;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
-}
-
-.lang-toggle-btn:hover {
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-.lang-option {
-    padding: 6px 12px;
-    font-size: 12px;
-    font-weight: 600;
-    border-radius: 16px;
-    transition: all 0.3s ease;
-    color: #666;
-}
-
-.lang-option.active {
-    background: #000;
-    color: #fff;
-}
-
-/* Make bilingual text transition smoothly */
-.bilingual-text {
-    transition: opacity 0.2s ease;
-}
-</style>
-"""
+    """Language toggle script is now handled by external JS/CSS files in magazine.html layout.
+    This function is kept for backwards compatibility but returns empty string."""
+    return ""
 
 
 def convert_json_to_html(json_data):
