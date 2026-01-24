@@ -69,6 +69,7 @@ Skill tool 호출:
 완료 후:
 - 생성된 JSON 파일 경로를 확인하고 기록
 - 파일 경로를 `ENGLISH_JSON` 변수로 저장 (예: `anthropic-ceo-summary.json`)
+- **중요**: 이 단계에서는 HTML 파일이 생성되지 않습니다. JSON 파일만 생성됩니다.
 
 ### 2단계: podcast-summary-translator 실행
 
@@ -95,7 +96,7 @@ Skill tool 호출:
 - 번역투 점수, 유기적 연결성 점수 확인
 - 치명적 문제가 있으면 사용자에게 보고하고 계속 진행할지 확인
 
-### 4단계: podcast-json-to-post 실행
+### 4단계: podcast-json-to-post 실행 (최종 단계 - HTML 생성)
 
 ```
 Skill tool 호출:
@@ -106,6 +107,7 @@ Skill tool 호출:
 완료 후:
 - 생성된 HTML 파일 경로 확인
 - 최종 결과 파일 경로를 사용자에게 보고
+- **중요**: 이 단계가 전체 워크플로우에서 HTML을 생성하는 유일한 단계입니다. 이중언어 JSON을 입력으로 받아 언어 토글 기능이 있는 이중언어 HTML을 생성합니다.
 
 ### 최종 리포트
 
