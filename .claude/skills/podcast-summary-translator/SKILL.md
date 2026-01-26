@@ -112,7 +112,7 @@ description: podcast-summary로 생성된 영문 JSON 파일을 자연스러운 
 3. **복합 문장 분리**: 긴 문장은 2-3개로 나누어 자연스럽게 번역
 
 **B. 번역투 제거 확인**
-- [natural-korean-guide.md](../podcast-summary-review/natural-korean-guide.md)의 120가지 패턴 준수 여부 확인
+- [natural-korean-guide.md](../common/natural-korean-guide.md)의 120가지 패턴 준수 여부 확인
 - 주요 확인 항목:
   - 명사형 과다 사용 (예: "~하는 것")
   - 수동태 표현 (예: "~에 의해")
@@ -171,7 +171,7 @@ Transcript → /podcast-summary → English JSON
 ```
 
 ## 관련 문서
-- [natural-korean-guide.md](../podcast-summary-review/natural-korean-guide.md): 100가지 자연스러운 한국어 패턴
+- [natural-korean-guide.md](../common/natural-korean-guide.md): 100가지 자연스러운 한국어 패턴
 - [quality-checklist.md](../podcast-summary-review/quality-checklist.md): 품질 기준
 - [magazine-template.json](../podcast-summary/magazine-template.json): JSON 구조 참조
 

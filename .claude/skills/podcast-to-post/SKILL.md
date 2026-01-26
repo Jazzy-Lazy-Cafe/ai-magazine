@@ -179,11 +179,14 @@ Skill tool 호출:
 [Step 2] /podcast-summary-translator
     ↓
 이중언어 JSON (-bilingual.json)
-    ↓         ↘
-[Step 3]    [Step 4]
-review      json-to-post
-    ↓            ↓
-품질 리포트   이중언어 Jekyll HTML (언어 토글)
+    ↓        
+[Step 3]    
+review     
+    ↓            
+품질 리포트 생성
+-> 품질 리포트 점수 95점 미만시 다시 review 루프를 돈다. 총 3회 동안 개선을 진행한다. 
+-> [Step 4]
+이중언어 Jekyll HTML (언어 토글)
 ```
 
 ## 관련 스킬

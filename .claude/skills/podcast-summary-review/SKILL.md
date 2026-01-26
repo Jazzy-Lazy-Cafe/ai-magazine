@@ -185,7 +185,7 @@ Section 3 (측정과 대응)
 - 읽었을 때 "번역된 글"이라는 느낌이 드는가?
 
 #### 흔한 번역투와 자연스러운 대안 
-- .claude/skills/podcast-summary-review/natural-korean-guide.md 를 참고합니다. 
+- .claude/skills/common/natural-korean-guide.md 를 참고합니다. 
 
 #### 문장 구조 개선 예시
 
