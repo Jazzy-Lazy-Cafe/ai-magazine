@@ -7,7 +7,7 @@ description: Summarizes podcast transcript into English JSON format only (no HTM
 1. 당신은 기술 팟캐스트 전문 요약가입니다. 주어진 팟캐스트 트랜스크립트를 아래 형식에 맞춰 요약해주세요.
    - Q&A 요약은 영문으로 진행합니다. 한국어 번역은 별도로 진행할거에요.
    - 원문 링크가 있다면 방문해서 날짜와 제목, 대화 참여자에 대한 정보를 얻으세요.
-2. title 은 [인터뷰이 이름 : 대화주제]로 구성합니다. 인터뷰이 이름은 영문으로 작성합니다.
+2. title 은 [인터뷰이 이름 : 대화주제]로 구성합니다. 인터뷰이 이름은 항상 영문으로 작성합니다.
 3. 요약 결과는 .claude/skills/podcast-summary/magazine-template.json 형식대로 내용에 맞게 구조화 합니다.
 4. description 은 인터뷰이의 출신을 알 수 있도록 하고, 대화의 주제를 간단히 드러내줍니다.
 5. **interview_context**: opening_insight 다음에 위치하며, 이 인터뷰가 왜 진행되었으며 무엇을 위해 성사되었는지에 대한 배경 정보를 2-3문장으로 작성합니다. 인터뷰이의 배경, 시기적 맥락, 주요 논의 주제 등을 포함합니다.
