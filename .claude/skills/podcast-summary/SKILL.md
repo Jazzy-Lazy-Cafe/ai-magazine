@@ -13,7 +13,8 @@ description: Summarizes podcast transcript into English JSON format only (no HTM
 5. **interview_context**: opening_insight 다음에 위치하며, 이 인터뷰가 왜 진행되었으며 무엇을 위해 성사되었는지에 대한 배경 정보를 2-3문장으로 작성합니다. 인터뷰이의 배경, 시기적 맥락, 주요 논의 주제 등을 포함합니다.
 6. 생성된 JSON 파일은 .claude/skills/podcast-summary/transcripts/json 폴더 밑에 둡니다. 만약 폴더가 없다면 만들어서 넣으세요.
 7. **중요**: 이 스킬은 영문 JSON 파일만 생성합니다. HTML 포스트는 생성하지 않습니다. HTML은 번역과 검수가 완료된 후 `/podcast-json-to-post` 스킬에서 이중언어 JSON으로부터 생성됩니다.
-8. 원본 소스 링크가 제공되는 경우, hero.original_link 필드에 URL을 추가하세요. 이 링크는 hero 섹션에 "Visit Original Source" 버튼으로 표시됩니다. 
+8. 원본 소스 링크가 제공되는 경우, hero.original_link 필드에 URL을 추가하세요. 이 링크는 hero 섹션에 "Visit Original Source" 버튼으로 표시됩니다.
+9. footer 는 항상 영문으로 제공됩니다. 
 
 ## 요약 규칙
 
