@@ -4,11 +4,12 @@ description: 트랜스크립트에서 Jekyll 포스트까지 전체 워크플로
 ---
 
 ## 목적
-팟캐스트 트랜스크립트 하나만 제공하면 영문 요약 → 한국어 번역 → 품질 검수 → Jekyll HTML 생성까지 전체 파이프라인을 자동으로 실행합니다.
+YouTube URL 또는 트랜스크립트 파일을 제공하면 트랜스크립트 다운로드 → 영문 요약 → 한국어 번역 → 품질 검수 → Jekyll HTML 생성까지 전체 파이프라인을 자동으로 실행합니다.
 
 ## 입력
-- 트랜스크립트 파일 경로 (선택사항)
-- 파일명 미제공 시 가장 최신 트랜스크립트 파일 자동 선택
+- **YouTube URL** (예: `https://youtu.be/VIDEO_ID`) 또는
+- **트랜스크립트 파일 경로** (예: `andrew-ng-interview.txt`)
+- 미제공 시 가장 최신 트랜스크립트 파일 자동 선택
 
 ## 출력
 - 영문 JSON 파일
@@ -17,6 +18,13 @@ description: 트랜스크립트에서 Jekyll 포스트까지 전체 워크플로
 - 이중언어 Jekyll 매거진 포스트 HTML 파일 (언어 토글 기능 포함)
 
 ## 워크플로우 단계
+
+### Step 0: YouTube 트랜스크립트 다운로드 (선택사항)
+- **입력**: YouTube URL
+- **조건**: 사용자가 YouTube URL을 제공한 경우에만 실행
+- **도구**: `ytt` CLI 명령어
+- **출력**: 트랜스크립트 텍스트 파일 (`.txt`)
+- **다음 단계로 전달**: 생성된 트랜스크립트 파일 경로
 
 ### Step 1: 영문 요약 생성 (podcast-summary)
 - **입력**: 트랜스크립트 텍스트 파일
@@ -44,6 +52,11 @@ description: 트랜스크립트에서 Jekyll 포스트까지 전체 워크플로
 
 ## 사용 예시
 
+### YouTube URL로 전체 워크플로우 실행
+```
+/podcast-to-post https://youtu.be/VIDEO_ID
+```
+
 ### 특정 트랜스크립트로 전체 워크플로우 실행
 ```
 /podcast-to-post transcript.txt
@@ -58,17 +71,50 @@ description: 트랜스크립트에서 Jekyll 포스트까지 전체 워크플로
 
 이 스킬을 실행할 때 다음 단계를 순차적으로 수행하세요:
 
+### 0단계: YouTube 트랜스크립트 다운로드 (YouTube URL이 제공된 경우만)
+
+**입력 판별:**
+1. 사용자 입력이 YouTube URL인지 확인 (예: `https://youtu.be/`, `https://www.youtube.com/watch?v=`)
+2. YouTube URL인 경우 이 단계를 실행
+3. 파일 경로 또는 미제공인 경우 이 단계를 건너뛰고 1단계로 진행
+
+**실행 (YouTube URL인 경우):**
+```bash
+ytt [YOUTUBE_URL] .claude/skills/podcast-summary/transcripts -m base
+```
+
+**중요 사항:**
+- `-m base` 모델 사용 (medium은 메모리 과다 사용 및 속도 느림)
+- `-v` 플래그 사용하지 말 것 (과도한 디버그 로그 생성)
+- 타임아웃: 최소 10분 (600000ms) 설정
+
+완료 후:
+1. `.claude/skills/podcast-summary/transcripts/metadata.json` 읽어서 비디오 제목 확인
+2. 비디오 제목을 기반으로 적절한 파일명 생성 (소문자, 하이픈 사용, 공백 제거)
+   - 예: "Andrew Ng on AI" → `andrew-ng-ai.txt`
+3. `transcript.txt`를 새 파일명으로 복사:
+   ```bash
+   cp .claude/skills/podcast-summary/transcripts/transcript.txt .claude/skills/podcast-summary/transcripts/[새-파일명].txt
+   ```
+4. 생성된 트랜스크립트 파일 경로를 `TRANSCRIPT_FILE` 변수로 저장
+5. 사용자에게 다운로드 완료 알림:
+   ```
+   ✅ YouTube 트랜스크립트 다운로드 완료
+   - 제목: [비디오 제목]
+   - 저장 위치: [파일 경로]
+   ```
+
 ### 1단계: podcast-summary 실행
 
 ```
 Skill tool 호출:
 - skill: "podcast-summary"
-- args: [사용자가 제공한 트랜스크립트 파일 또는 최신 파일]
+- args: [0단계에서 생성된 TRANSCRIPT_FILE 또는 사용자가 제공한 트랜스크립트 파일 또는 최신 파일]
 ```
 
 완료 후:
 - 생성된 JSON 파일 경로를 확인하고 기록
-- 파일 경로를 `ENGLISH_JSON` 변수로 저장 (예: `anthropic-ceo-summary.json`)
+- 파일 경로를 `ENGLISH_JSON` 변수로 저장 (예: `andrew-ng-ai-summary.json`)
 - **중요**: 이 단계에서는 HTML 파일이 생성되지 않습니다. JSON 파일만 생성됩니다.
 
 ### 2단계: podcast-summary-translator 실행
@@ -137,6 +183,14 @@ Skill tool 호출:
 
 ## 에러 처리
 
+### Step 0 실패 시 (YouTube 다운로드)
+- YouTube URL 오류 → URL 형식 확인 안내
+- 비디오를 찾을 수 없음 → URL 재확인 요청
+- 트랜스크립트 없음 → 수동 트랜스크립트 제공 요청
+- ytt 명령어 없음 → ytt 설치 안내
+- 메모리 부족 (exit code 137) → base 모델 사용 권장
+- 워크플로우 중단, 이후 단계 실행 안 함
+
 ### Step 1 실패 시
 - 트랜스크립트 파일 형식 오류 → 파일 형식 확인 안내
 - 트랜스크립트 파일 없음 → 사용 가능한 파일 목록 표시
@@ -170,6 +224,10 @@ Skill tool 호출:
 ## 워크플로우 다이어그램
 
 ```
+YouTube URL (선택사항)
+    ↓
+[Step 0] ytt CLI 다운로드
+    ↓
 트랜스크립트 (.txt)
     ↓
 [Step 1] /podcast-summary
