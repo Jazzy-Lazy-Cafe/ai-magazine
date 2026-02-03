@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-adsense-account" content="ca-pub-7888773492514289">
+    {% seo %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Noto+Sans+KR:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ '/assets/css/markdown-post.css' | relative_url }}">
+    {% include adsense.html %}
+</head>
+<body>
+    <!-- Noise overlay -->
+    <div class="noise-overlay"></div>
+
+    <!-- Ambient glow -->
+    <div class="ambient-glow"></div>
+
+    <!-- Header -->
+    <header class="markdown-header">
+        <div class="header-content">
+            <a href="{{ site.baseurl }}/" class="logo">
+                <span class="logo-main">{{ site.title | split: ' ' | first }}</span>
+                <span class="logo-accent">{{ site.title | split: ' ' | slice: 1, 10 | join: ' ' }}</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Main content -->
+    <article class="markdown-article">
+        <!-- Post header -->
+        <header class="post-header">
+            {% if page.category %}
+            <div class="post-category">{{ page.category }}</div>
+            {% endif %}
+
+            <h1 class="post-title">{{ page.title }}</h1>
+
+            {% if page.description %}
+            <p class="post-description">{{ page.description }}</p>
+            {% endif %}
+
+            <div class="post-meta">
+                <time datetime="{{ page.date | date_to_xmlschema }}">
+                    {{ page.date | date: "%B %d, %Y" }}
+                </time>
+                {% if page.author %}
+                <span class="meta-separator">·</span>
+                <span class="post-author">{{ page.author }}</span>
+                {% endif %}
+                {% if page.read_time %}
+                <span class="meta-separator">·</span>
+                <span class="read-time">{{ page.read_time }} min read</span>
+                {% endif %}
+            </div>
+        </header>
+
+        <!-- Post content -->
+        <div class="post-content">
+            {{ content }}
+        </div>
+
+        <!-- Post footer -->
+        {% if page.tags and page.tags.size > 0 %}
+        <footer class="post-footer">
+            <div class="post-tags">
+                {% for tag in page.tags %}
+                <span class="tag">{{ tag }}</span>
+                {% endfor %}
+            </div>
+        </footer>
+        {% endif %}
+    </article>
+
+    <!-- Back to home -->
+    <div class="back-link">
+        <a href="{{ site.baseurl }}/">← Back to Home</a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="markdown-footer">
+        <p>{{ site.title }} — {{ site.description }}</p>
+        <p class="footer-meta">
+            <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+        </p>
+    </footer>
+
+    {% include google-analytics.html %}
+</body>
+</html>
